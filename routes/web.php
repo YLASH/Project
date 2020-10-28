@@ -36,9 +36,7 @@ Route::get('/mylist/', [MemberController::class, 'mylist']);
 
 
 Route::get('/upload_page/', [ProductController::class, 'upload']);
-Route::get('/products/',function(){
-    return view('pages.products');
-    });
+Route::get('/product/{pid}', [ProductController::class, 'index']);
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

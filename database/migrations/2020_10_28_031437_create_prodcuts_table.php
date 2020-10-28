@@ -21,6 +21,7 @@ class CreateProdcutsTable extends Migration
             $table->string("pickplace");
             $table->string("quantity");
             $table->string("description");
+            $table->string("userid");
             $table->timestamps();
         });
     }

@@ -15,37 +15,43 @@ my title
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
 </div>
-
-    <div class="card-deck">
-    <div class="card">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+     <!--for 產品列表-->
+    <div class="card" style="width:30%; float:left;margin: 0px 1% 2% 2%; padding-bottom:0;">
+        <img class="card-img-top" src="images/img02.jpg" alt="Card image" style="width:100%">
+        <p align="right"style="margin:0;">post-time:2020-10-28 11a.m.</p>
+        <div class="card-body"  style="padding-top:0;">
+        <h5 class="card-title" >{{$pname}}</h5>
+        <div style="width:75%; float:left;margin-top: 0;">
+        <p  class="card-text">領取時間:{{$picktime}} <br>領取地點:{{$pickzip}}-{{$pickplace}}</p>
         </div>
-        <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
+        <div style="width:20%; float:right;">
+        <a class="btn btn-sm" href="/product/{{$pid}}" role="button" style="float: right"> >>more</a>
         </div>
-    </div>
-    <div class="card">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-        </div>
-        <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
         </div>
     </div>
-    <div class="card">
-        <img src="..." class="card-img-top" alt="...">
+     <!--for 產品列表-->
+    <div class="card" style="width:30%; float:left;margin: 0px 1% 2% 1%;">
+        <img class="card-img-top" src="img_avatar1.png" alt="Card image" style="width:100%">
         <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-        </div>
-        <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
+        <h4 class="card-title">John Doe</h4>
+        <p class="card-text">222 領取時間:picktime Some example text some example text. John Doe is an architect and engineer</p>
+        <a href="#" class="btn btn-primary">See Profile</a>
         </div>
     </div>
+    <div class="card" style="width:30% ;float:right;margin: 0px 2% 2% 1%;">
+        <img class="card-img-top" src="img_avatar1.png" alt="Card image" style="width:100%">
+        <div class="card-body">
+        <h4 class="card-title">John Doe</h4>
+        <p class="card-text">333 領取時間:picktime Some example text some example text. John Doe is an architect and engineer</p>
+        <a href="#" class="btn btn-primary">See Profile</a>
+        </div>
+    </div>
+    <div class="card" style="width:30%; float:left;margin: 0px 1% 2% 2%;">
+        <img class="card-img-top" src="img_avatar1.png" alt="Card image" style="width:100%">
+        <div class="card-body">
+        <h4 class="card-title">John Doe</h4>
+        <p class="card-text">444 領取時間:picktime Some example text some example text. John Doe is an architect and engineer</p>
+        <a href="#" class="btn btn-primary">See Profile</a>
+        </div>
     </div>
 @endsection
