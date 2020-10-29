@@ -7,9 +7,8 @@
   <input type="submit" value="Upload Image" name="submit">
 </form>
   <hr>
-  {{$imagesf}}
-  @foreach($images as $image)
   
+  @foreach($images as $image)
    <img src="/storage/{{$image->filename}}" width="200">
        <br>
    @endforeach    
