@@ -7,10 +7,10 @@ my title
 @section('content')
 <main>
     <div>
-        <form action="/upload_page/" method="post">
+        <form action="/upload/" method="post">
         @csrf
         <label for="pdname">What is it you're sharing today?</label>
-        <input type="text" id="pdname"placeholder="Insert Product Name"><br>
+        <input type="text"  id="pdname" name="pdname"placeholder="Insert Product Name"><br>
         <label>Collection By</label>
         <select id=collectinfo name="date" required>
         <?php 
@@ -47,7 +47,9 @@ my title
         for($i=00; $i<=59; $i++)
         {echo "<option value=".$i.">".$i."</option>";}
         ?> </select><br> 
-        At<input type="tetx" name="loca" placeholder="Collection Point"> <!--insert map--><br>
+        At
+        <input type="tetx"name="zip" id="zip">
+        <input type="tetx" name="loca" placeholder="Collection Point"> <!--insert map--><br>
         Amount:
         <input name="foodamn" type="radio" id="amnfood"><label for="amnfood">Uncountable</label>
         <input name="foodamn" type="radio" id="unamn"><input type="text" id="unamn" pattern=[0-9]{1,}>
@@ -56,7 +58,7 @@ my title
         <input type="button" value="Upload Photo" id="fotoup" onclick="">   
         <br>
         <label for="dscrp">Tell us more about it</label>
-        <input id="dscrp" type="text" placeholder="write description">
+        <input id="dscrp" name="dscrp" type="text" placeholder="write description">
         <br>
         <input type="submit" name="prevuFood" value="PREVIEW">
         </form>

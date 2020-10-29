@@ -20,7 +20,7 @@ class ProductController extends Controller
           $user = Auth::user();
           $username = $user->name;
       }
-      
+      $prodcuts =DB::table('prodcuts')->get();
       $pname =DB::table('prodcuts')->where('id', '=', $id)->value('pname');
       $picktime =DB::table('prodcuts')->where('id', '=', $id)->value('picktime');
       $pickzip =DB::table('prodcuts')->where('id', '=', $id)->value('pickazip');
@@ -29,8 +29,14 @@ class ProductController extends Controller
       $uid =DB::table('prodcuts')->where('id', '=', $id)->value('userid');
       $uname =DB::table('users')->where('id','=',$uid)->value('name');
       
-      return view('pages.products', compact('username','pname','picktime','pickzip','pickplace','dscrp','uname'));
+      return view('pages.products', compact('prodcuts','username','pname','picktime','pickzip','pickplace','dscrp','uname'));
       
+    }
+    public function delete($id){
+      $prodcuts =DB::table('prodcuts')->get();
+      DB::table('prodcuts')->where('id', '=', $id)->delete();
+      return view('pages.mylist',compact('prodcuts'));
   }
+
     
 }

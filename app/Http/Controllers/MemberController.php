@@ -12,7 +12,9 @@ class MemberController extends Controller
         if (Auth::check()) {
             $user = Auth::user();
             $username = $user->name;
-        return view('pages.mylist', compact('username'));
+            $userid =$user->id;
+        $prodcuts =DB::table('prodcuts')->get();    
+        return view('pages.mylist', compact('username','prodcuts'));
         }
         
         return view('auth.login', compact('username'));

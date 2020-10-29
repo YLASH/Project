@@ -16,20 +16,24 @@ my title
     </form>
 </div>
      <!--for 產品列表-->
-    <div class="card" style="width:30%; float:left;margin: 0px 1% 2% 2%; padding-bottom:0;">
+     @forelse ($prodcuts as $prodcut)
+    <div class="card" style="width:30%; float:left;margin: 0px 1% 2% 1%; padding-bottom:0;">
         <img class="card-img-top" src="images/img02.jpg" alt="Card image" style="width:100%">
         <p align="right"style="margin:0;">post-time:2020-10-28 11a.m.</p>
         <div class="card-body"  style="padding-top:0;">
-        <h5 class="card-title" >{{$pname}}</h5>
+        <h5 class="card-title" >{{$prodcut->pname}}</h5>
         <div style="width:75%; float:left;margin-top: 0;">
-        <p  class="card-text">領取時間:{{$picktime}} <br>領取地點:{{$pickzip}}-{{$pickplace}}</p>
+        <p  class="card-text">領取時間:{{$prodcut->picktime}} <br>領取地點:{{$prodcut->pickazip}}-{{$prodcut->pickplace}}</p>
         </div>
         <div style="width:20%; float:right;">
         <a class="btn btn-sm" href="/product/{{$pid}}" role="button" style="float: right"> >>more</a>
         </div>
         </div>
     </div>
-     <!--for 產品列表-->
+    @empty
+    <p>empty</p>
+    @endforelse
+     <!--for 產品列表
     <div class="card" style="width:30%; float:left;margin: 0px 1% 2% 1%;">
         <img class="card-img-top" src="img_avatar1.png" alt="Card image" style="width:100%">
         <div class="card-body">
@@ -52,6 +56,6 @@ my title
         <h4 class="card-title">John Doe</h4>
         <p class="card-text">444 領取時間:picktime Some example text some example text. John Doe is an architect and engineer</p>
         <a href="#" class="btn btn-primary">See Profile</a>
-        </div>
+        </div>-->
     </div>
 @endsection

@@ -25,12 +25,13 @@ class NewController extends Controller
             $user = Auth::user();
             $username = $user->name;
         }
+        $prodcuts =DB::table('prodcuts')->get();
         $pid =DB::table('prodcuts')->value('id');
         $pname =DB::table('prodcuts')->value('pname');
         $picktime =DB::table('prodcuts')->value('picktime');
         $pickzip =DB::table('prodcuts')->value('pickazip');
         $pickplace =DB::table('prodcuts')->value('pickplace');
-        return view('pages.savefood', compact('pid','username','pname','picktime','pickzip','pickplace'));
+        return view('pages.savefood', compact('prodcuts','pid','username','pname','picktime','pickzip','pickplace'));
         
     }
     public function share() {

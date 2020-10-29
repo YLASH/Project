@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\NewController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ShareController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,8 +36,11 @@ Route::get('/volunteers', [NewController::class, 'volunteers']);
 Route::get('/mylist/', [MemberController::class, 'mylist']);
 
 
-Route::get('/upload_page/', [ProductController::class, 'upload']);
+//Route::get('/upload_page/', [ProductController::class, 'upload']);
 Route::get('/product/{pid}', [ProductController::class, 'index']);
+Route::get('/preproduct', [ProductController::class, 'index']);
+Route::post('/upload', [ShareController::class, 'upload']);
+Route::get('/delete/{id}/', [ProductController::class, 'delete']);
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
