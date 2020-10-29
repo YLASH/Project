@@ -1,11 +1,11 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <img src='\images\logo.png' width="20">
+<nav class="navbar navbar-expand-lg navbar-light bg-light"  style="background-color:#DFFFDF;">
+  <img src='\images\logo.png' width="50">
   <!--<a class="navbar-brand" href="#">Navbar</a>-->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" >
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
@@ -29,18 +29,18 @@
     <tr>
     @if (Route::has('login'))
           @auth 
-            <td class="nav-item">
+            <td class="nav-item" >
                <a class="nav-link" href="{{ url('/dashboard') }}">Dashboard</a>
             </td>
             <td class="nav-item">
                <a class="nav-link" href="{{ url('/logout') }}">logout</a>
             </td>
-            <td>
+            <td >
               <div class="dropdown">
                 <button class="dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Account
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2" >
                   <a class="dropdown-item"  href="#">Profile</a>
                   <a class="dropdown-item"  href="{{ url('/mylist/') }}">Mylist</a>
                   <div class="dropdown-divider"></div>
