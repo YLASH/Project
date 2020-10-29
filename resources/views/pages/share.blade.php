@@ -55,14 +55,18 @@ my title
         <input name="foodamn" type="radio" id="unamn"><input type="text" id="unamn" pattern=[0-9]{1,}>
         <br>
         <label for="fotoup">Upload a cute shot of your food</label><!--upload image-->
-        <input type="button" value="Upload Photo" id="fotoup" onclick="">   
+        <input type="button" value="Upload Photo" id="fotoup" onclick=""> <a href="{{url('uploadimg')}}">...</a>  
         <br>
         <label for="dscrp">Tell us more about it</label>
         <input id="dscrp" name="dscrp" type="text" placeholder="write description">
         <br>
-        <input type="submit" name="prevuFood" value="PREVIEW">
+        
+        <input type="submit" name="submitFood" value="POST!!!">
+        <input type="button" name="prevuFood"  value="PREVIEW!!!">
+        <input type="reset" name="resetshare" value="RESET!!!">
+        
         </form>
-        <!--<input type="submit" name="submitFood" value="SHARE!!!">-->
+        <!--<button name="prevuFood"><a href="{url('preproduct')}">PREVIEW!!!</a></button>-->
     </div> 
 </main>
  

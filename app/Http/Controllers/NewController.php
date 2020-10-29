@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\Models\UploadedImage;
 
 class NewController extends Controller
 {
@@ -31,6 +32,7 @@ class NewController extends Controller
         $picktime =DB::table('prodcuts')->value('picktime');
         $pickzip =DB::table('prodcuts')->value('pickazip');
         $pickplace =DB::table('prodcuts')->value('pickplace');
+        //$images = UploadedImage::all();
         return view('pages.savefood', compact('prodcuts','pid','username','pname','picktime','pickzip','pickplace'));
         
     }

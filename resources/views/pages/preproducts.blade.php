@@ -30,8 +30,9 @@ my title
         </div>
         </div>
     </div>
-    <input type="submit" name="prevuFood" value="修改">
-    <input type="submit" name="prevuFood" value="sure"> 
-    <input type="submit" name="prevuFood" value="cancel">          
+    <button name="editshare" onclick="history.back()">EDIT</button>
+    <button name="esubmitFood"><a href="#">SHARE!!!</a></button>
+    <!--<input type="submit" name="submitFood" value="SHARE!!!"> -->
+    <!--<input type="submit" name="prevuFood" value="cancel"> -->         
 
 @endsection    

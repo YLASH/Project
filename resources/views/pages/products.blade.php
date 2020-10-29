@@ -17,8 +17,8 @@ my title
             <ul>
                 <li>領取時間: {{$picktime}}</li>
                 <li>領取地點:{{$pickzip}} - {{$pickplace}}</li>
-                <li>數量:</li>
-                <li>post :by {{$uname}}</li>
+                <li>數量:{{$quantity}}</li>
+                <li>post :by {{$username}}</li>
 
             </ul> 
             <hr>
@@ -27,6 +27,7 @@ my title
                 </p>
                 <br>
                 <br>
+                <button><a href="{{ url('savefood') }}">Back</a></button>
         </div>
         </div>
     </div>
