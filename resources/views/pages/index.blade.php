@@ -40,9 +40,9 @@ my title
    
 </div> 
 
-<div class="alert alert-info col-3" role="alert" style="float: left;height:250px;
+<div class="alert alert-info col-3 d-flex align-item-center" role="alert" style="float: left;height:250px;
 background-color:#D7FFEE;">
-  <img src='\images\food2.jpg' art="picture" height="" width="100%" style="float: left;" >
+  <img src='\images\food2.jpg' art="picture" height="90%" width="100%" class="d-flex align-content-center" >
 </div>
 <div class="alert alert-success col-9" role="alert" height="500px" " width="100%" style="float: right ;background-color:#D7FFEE;height:250px;">
 
