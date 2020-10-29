@@ -87,7 +87,7 @@ class ProductController extends Controller
         //update
         //return redirct..
       }
-    }
+    
 
     
 }

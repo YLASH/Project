@@ -26,8 +26,8 @@ my title
         <p  class="card-text">領取時間:{{$prodcut->picktime}} <br>領取地點:{{$prodcut->pickazip}}-{{$prodcut->pickplace}}</p>
         </div>
         <div style="width:20%; float:right;">
-        <a class="btn btn-sm" href="/product/{{$pid}}" role="button" style="float: right"> >>more</a>
-        </div>
+        <a class="btn btn-sm" href="/product/{{$prodcut->id}}" role="button" style="float: right"> >>more</a>
+        </div> 
         </div>
     </div>
     @empty
