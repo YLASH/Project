@@ -37,16 +37,22 @@ my title
    <h4 class="alert-heading">
    <img src='\images\earth2.png' art="picture" height="" width="90%" style="" >
   </h4>
-  
- 
+   
 </div> 
 
-<div class="alert alert-success" role="alert" height="500px" style="float: right ;">
-   <h4 class="alert-heading">
+<div class="alert alert-info col-3" role="alert" style="float: left;height:250px;
+background-color:#D7FFEE;">
+  <img src='\images\food2.jpg' art="picture" height="" width="100%" style="float: left;" >
+</div>
+<div class="alert alert-success col-9" role="alert" height="500px" " width="100%" style="float: right ;background-color:#D7FFEE;height:250px;">
+
+<h4 class="alert-heading">
 Cooperative Store</h4>
   <p>H2O Hotel</p>
   <hr>
-  <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+  <p class="mb-0">Wasting food is never the only choice you can make after closing the store every day.
+    Providing food which is near expiration time for free can help unimaginable amount of peolpe and simultaneosly advertise.
+  </p>
   <a class="btn btn-light btn-mid" href="#" role="button" style="float: right">Learn more</a>
 </div> 
 
