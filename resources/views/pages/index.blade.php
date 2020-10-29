@@ -22,7 +22,8 @@ my title
 </div>
 <div class="alert alert-success col-9" role="alert" style="float: right ;height:200px;background-color:	#FBFBFF;">
    <h4 class="alert-heading">Statistics</h4>
-  <p>根據聯合國報告，全球被浪費掉的1/3食物讓碳排量高達44萬噸
+   <p>Based on the waste information from World Counts, there is a third of the world's food is wasted. </p>
+  <p><iframe title='Tons of food lost or wasted' src='https://www.theworldcounts.com/embed/challenges/101?background_color=#FBFBFF&color=black&font_family=%22Helvetica+Neue%22%2C+Arial%2C+sans-serif&font_size=14' style='border:none;' height='100' width='300' align='left' ></iframe>
   </p>
   <br>
   <p class="mb-0"></p>
@@ -42,7 +43,7 @@ my title
 
 <div class="alert alert-info col-3 d-flex align-item-center" role="alert" style="float: left;height:250px;
 background-color:#D7FFEE;">
-  <img src='\images\food2.jpg' art="picture" height="90%" width="100%" class="d-flex align-content-center" >
+  <img src='\images\food2.jpg' art="picture" height="80%" width="100%" class="d-flex align-content-center" >
 </div>
 <div class="alert alert-success col-9" role="alert" height="500px" " width="100%" style="float: right ;background-color:#D7FFEE;height:250px;">
 
