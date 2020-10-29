@@ -49,6 +49,8 @@ Route::post('/addimg',[UploadImageController::class, 'upload']);
 
 
 Route::get('/delete/{id}/', [ProductController::class, 'delete']);
+Route::get('/edit/{id}/',[ProductController::class, 'editlist']);
+Route::get('/edit/{id}/',[ProductController::class, 'edit']);
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

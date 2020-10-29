@@ -63,7 +63,31 @@ class ProductController extends Controller
       $prodcuts =DB::table('prodcuts')->get();
       DB::table('prodcuts')->where('id', '=', $id)->delete();
       return view('pages.mylist',compact('prodcuts'));
-  }
+    }
+    public function editlist($id) {
+        
+      $username = "Guest";
+      if (Auth::check()) {
+          $user = Auth::user();
+          $username = $user->name;
+      }
+      $prodcuts =DB::table('prodcuts')->get();
+      $pname =DB::table('prodcuts')->where('id', '=', $id)->value('pname');
+      $picktime =DB::table('prodcuts')->where('id', '=', $id)->value('picktime');
+      $pickzip =DB::table('prodcuts')->where('id', '=', $id)->value('pickazip');
+      $pickplace =DB::table('prodcuts')->where('id', '=', $id)->value('pickplace');
+      $quantity=DB::table('prodcuts')->where('id', '=', $id)->value('quantity');
+      $dscrp =DB::table('prodcuts')->where('id', '=', $id)->value('description');
+      $uid =DB::table('prodcuts')->where('id', '=', $id)->value('userid');
+      $username =DB::table('users')->where('id','=',$uid)->value('name');
+      
+      return view('pages.edit', compact('prodcuts','username','pname','picktime','pickzip','pickplace','quantity','dscrp','username'));
+      }
+      public function edit(){
+        //update
+        //return redirct..
+      }
+    }
 
     
 }

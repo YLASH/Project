@@ -13,17 +13,17 @@ my title
         </div>
         <div class="card" style="float: right;height:30% ;width:55% ;margin: 0px 1% 2% 1%;">
         <div class="card-body"style="height:30% ;width:55%">
-            <h3>{{$pname}}</h3>
+        <h3><input type=text value="{{$pname}}"></h3>
             <ul>
-                <li>領取時間: {{$picktime}}</li>
+                <li>領取時間: <input type="text" value="{{$picktime}}"></li>
                 <li>領取地點:{{$pickzip}} - {{$pickplace}}</li>
-                <li>數量:</li>
+                <li>數量:<input type="text" value="{{$quantity}}"></li>
                 <li>post by: {{$username}}</li>
 
             </ul> 
             <hr>
             <h5>  Description</h5>
-                <p>{{$dscrp}}
+                <p><input type="text" value="{{$dscrp}}">
                 </p>
                 <br>
                 <br>
@@ -32,8 +32,8 @@ my title
     </div>
     <button name="editshare"><a href="#">EDIT!!!</a></button>
     <button name="backshare" onclick="history.back()">back</button>
-    <button name="submitFood"><a href="#">SHARE!!!</a></button>
+    
     <!--<input type="submit" name="submitFood" value="SHARE!!!"> -->
     <!--<input type="submit" name="prevuFood" value="cancel"> -->         
 
-@endsection    
+@endsection 
