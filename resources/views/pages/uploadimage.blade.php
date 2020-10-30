@@ -8,7 +8,11 @@
 </form>
   <hr>
   
-  @foreach($images as $image)
+  @foreach($images as $img)
+   <img src="/storage/{{$image->filename}}" width="200">
+       <br>
+   @endforeach    
+   @foreach($image as $imag)
    <img src="/storage/{{$image->filename}}" width="200">
        <br>
    @endforeach    

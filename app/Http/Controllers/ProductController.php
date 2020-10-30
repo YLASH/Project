@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
+
 class ProductController extends Controller
 {
   // public function perview(){
@@ -20,17 +21,18 @@ class ProductController extends Controller
           $user = Auth::user();
           $username = $user->name;
       }
-      $prodcuts =DB::table('prodcuts')->get();
+      $prodcuts =DB::table('prodcuts')->where('id', '=', $id)->get();
       $pname =DB::table('prodcuts')->where('id', '=', $id)->value('pname');
       $picktime =DB::table('prodcuts')->where('id', '=', $id)->value('picktime');
-      $pickzip =DB::table('prodcuts')->where('id', '=', $id)->value('pickazip');
+      $pickzip =DB::table('prodcuts')->where('id', '=', $id)->value('pickzip');
       $pickplace =DB::table('prodcuts')->where('id', '=', $id)->value('pickplace');
       $quantity=DB::table('prodcuts')->where('id', '=', $id)->value('quantity');
       $dscrp =DB::table('prodcuts')->where('id', '=', $id)->value('description');
+      $filename =DB::table('prodcuts')->where('id', '=', $id)->value('filename');
       $uid =DB::table('prodcuts')->where('id', '=', $id)->value('userid');
       $username =DB::table('users')->where('id','=',$uid)->value('name');
       
-      return view('pages.products', compact('prodcuts','username','pname','picktime','pickzip','pickplace','quantity','dscrp','username'));
+      return view('pages.products', compact('prodcuts','username','pname','picktime','pickzip','pickplace','quantity','dscrp','uid','filename'));
       
     }
     public function preview(Request $request){
@@ -42,7 +44,7 @@ class ProductController extends Controller
       $dscrp=$request->input('dscrp');
       $userid=(Auth::user())->id;
       $username=(Auth::user())->name;
-      //DB::insert('insert into prodcuts (pname,picktime,pickazip,pickplace,quantity,description,userid) values(?,?,?,?,?,?,?)',[$pname,$picktime,$pickzip,$pickplace,$quantity,$dscrp,$userid]);
+      //DB::insert('insert into prodcuts (pname,picktime,pickzip,pickplace,quantity,description,userid) values(?,?,?,?,?,?,?)',[$pname,$picktime,$pickzip,$pickplace,$quantity,$dscrp,$userid]);
       return view('pages.preproducts',compact('username','pname','picktime','pickzip','pickplace','quantity','dscrp','userid'));
     }
     public function upload(Request $request){
@@ -54,9 +56,12 @@ class ProductController extends Controller
       $dscrp=$request->input('dscrp');
       $userid=(Auth::user())->id;
       $username=(Auth::user())->name;
-      DB::insert('insert into prodcuts (pname,picktime,pickazip,pickplace,quantity,description,userid) values(?,?,?,?,?,?,?)',[$pname,$picktime,$pickzip,$pickplace,$quantity,$dscrp,$userid]);
-      return view('pages.preproducts',compact('username','pname','picktime','pickzip','pickplace','quantity','dscrp','userid'));
-   }
+      $path = $request->file('fileToUpload')->store('public');
+      $filename =basename($path);
+      DB::insert('insert into prodcuts (pname,picktime,pickzip,pickplace,quantity,description,filename,userid) values(?,?,?,?,?,?,?,?)',[$pname,$picktime,$pickzip,$pickplace,$quantity,$dscrp,$filename,$userid]);
+      return view('pages.preproducts',compact('username','pname','picktime','pickzip','pickplace','quantity','dscrp','userid','filename'));
+      //return $filename;
+    }
    
 
     public function delete($id){
@@ -74,7 +79,7 @@ class ProductController extends Controller
       $prodcuts =DB::table('prodcuts')->get();
       $pname =DB::table('prodcuts')->where('id', '=', $id)->value('pname');
       $picktime =DB::table('prodcuts')->where('id', '=', $id)->value('picktime');
-      $pickzip =DB::table('prodcuts')->where('id', '=', $id)->value('pickazip');
+      $pickzip =DB::table('prodcuts')->where('id', '=', $id)->value('pickzip');
       $pickplace =DB::table('prodcuts')->where('id', '=', $id)->value('pickplace');
       $quantity=DB::table('prodcuts')->where('id', '=', $id)->value('quantity');
       $dscrp =DB::table('prodcuts')->where('id', '=', $id)->value('description');

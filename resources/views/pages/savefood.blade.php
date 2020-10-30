@@ -18,12 +18,12 @@ my title
      <!--for 產品列表-->
      @forelse ($prodcuts as $prodcut)
     <div class="card" style="width:30%; float:left;margin: 0px 1% 2% 1%; padding-bottom:0;">
-        <img class="card-img-top" src="images/img02.jpg" alt="Card image" style="width:100%">
+        <img class="card-img-top"src="/storage/{{$prodcut->filename}}" alt="Card image" style="width:100%">
         <p align="right"style="margin:0;">post-time:2020-10-28 11a.m.</p>
         <div class="card-body"  style="padding-top:0;">
         <h5 class="card-title" >{{$prodcut->pname}}</h5>
         <div style="width:75%; float:left;margin-top: 0;">
-        <p  class="card-text">領取時間:{{$prodcut->picktime}} <br>領取地點:{{$prodcut->pickazip}}-{{$prodcut->pickplace}}</p>
+        <p  class="card-text">領取時間:{{$prodcut->picktime}} <br>領取地點:{{$prodcut->pickzip}}-{{$prodcut->pickplace}}</p>
         </div>
         <div style="width:20%; float:right;">
         <a class="btn btn-sm" href="/product/{{$prodcut->id}}" role="button" style="float: right"> >>more</a>

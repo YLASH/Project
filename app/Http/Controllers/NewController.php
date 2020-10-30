@@ -30,8 +30,9 @@ class NewController extends Controller
         $pid =DB::table('prodcuts')->value('id');
         $pname =DB::table('prodcuts')->value('pname');
         $picktime =DB::table('prodcuts')->value('picktime');
-        $pickzip =DB::table('prodcuts')->value('pickazip');
+        $pickzip =DB::table('prodcuts')->value('pickzip');
         $pickplace =DB::table('prodcuts')->value('pickplace');
+        $filename =DB::table('prodcuts')->value('filename');
         //$images = UploadedImage::all();
         return view('pages.savefood', compact('prodcuts','pid','username','pname','picktime','pickzip','pickplace'));
         

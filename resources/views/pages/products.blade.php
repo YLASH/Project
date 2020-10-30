@@ -8,7 +8,7 @@ my title
     <div class="container" >
         <div class="card" style="float: left; height:30%; width:40%;margin: 0px 1% 2% 1%;"> 
         <div class="card-body">
-            <img src='\images\img02.jpg' art="picture" height="" width="80%" >
+            <img src="/storage/{{$filename}}" art="picture" height="" width="80%" >
             </div>
         </div>
         <div class="card" style="float: right;height:30% ;width:55% ;margin: 0px 1% 2% 1%;">

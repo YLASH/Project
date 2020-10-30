@@ -7,7 +7,7 @@ my title
 @section('content')
 <main>
     <div>
-        <form action="/upload/" method="post">
+        <form action="/upload/" method="post" enctype="multipart/form-data">
         @csrf
         <label for="pdname">What is it you're sharing today?</label>
         <input type="text"  id="pdname" name="pdname"placeholder="Insert Product Name"><br>
@@ -55,6 +55,7 @@ my title
         <input name="foodamn" type="radio" id="unamn"><input type="text" id="unamn" pattern=[0-9]{1,}>
         <br>
         <label for="fotoup">Upload a cute shot of your food</label><!--upload image-->
+        <input type="file" name="fileToUpload" id="fileToUpload">
         <input type="button" value="Upload Photo" id="fotoup" onclick=""> <a href="{{url('uploadimg')}}">...</a>  
         <br>
         <label for="dscrp">Tell us more about it</label>
