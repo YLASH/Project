@@ -15,10 +15,10 @@ my title
         <div class="card-body"style="height:30% ;width:55%">
             <h3>{{$pname}}</h3>
             <ul>
-                <li>領取時間: {{$picktime}}</li>
-                <li>領取地點:{{$pickzip}} - {{$pickplace}}</li>
-                <li>數量:{{$quantity}}</li>
-                <li>post :by {{$username}}</li>
+                <li>PickUp_Time: {{$picktime}}</li>
+                <li>PickUp_Place::{{$pickzip}} - {{$pickplace}}</li>
+                <li>Amount:{{$quantity}}</li>
+                <li>Post :by {{$username}}</li>
 
             </ul> 
             <hr>
