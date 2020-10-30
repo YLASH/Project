@@ -24,8 +24,9 @@
       <li class="nav-item">
         <a class="nav-link" href="{{ url('aboutus') }}">About Us</a>
       </li>
-        
-    </ul>
+      </ul>
+      
+
     <tr>
     @if (Route::has('login'))
           @auth 
