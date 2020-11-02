@@ -16,7 +16,21 @@ my title
         </li>
         
         </ul>
-
+        <div class="card bg-light text-dark">
+            <div class="card-body">
+                
+               <table>
+                @foreach($prodcuts as $prodcut)
+                   <tr>
+                       <td><img src="#">{{$prodcut->pname}}</td>
+                       <td><a href='edit'><center>Edit</center></a></td>
+                       <td><a href='#/delete/{{$prodcut->id}}/'><center>Delete</center></a></td>
+                    </tr>
+               @endforeach 
+               </table> 
+            </div>
+         </div>
+        </div>
 
 
 @endsection

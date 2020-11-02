@@ -22,12 +22,12 @@ my title
 </div> -->
 
    <div id="carouselExampleIndicators" class=" alert alert-info carousel slide col-3" data-ride="carousel" style="float: left; height:200px;background-color:#FBFBFF;">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
     <div class="carousel-item active">
       <img class="d-block w-100" src="\images\waste1.png" alt="" height="80%" width="100%">
     </div>
@@ -59,9 +59,10 @@ my title
  </div>    
 
 <div class="alert alert-info col-9" role="alert" style="float: left;height:250px;">
-   <h4 class="alert-heading">Corporation</h4>
+   <h4 class="alert-heading">Be part of us.</h4>
   <p>Join us to be a volunteer and save food!</p>
   <p class="mb-0">Whenever you want to join, it is never too late to be a food hero.</p>
+  <img src="\images\volunteer.png" style="float:bottom;height:130px;" >
   </div>
 <div class="alert alert-info col-3" role="alert" style="float: right ;height:250px;">
    <h4 class="alert-heading">

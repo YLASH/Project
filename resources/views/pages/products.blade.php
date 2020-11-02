@@ -8,17 +8,17 @@ my title
     <div class="container" >
         <div class="card" style="float: left; height:30%; width:40%;margin: 0px 1% 2% 1%;"> 
         <div class="card-body">
-            <img src='\images\img02.jpg' art="picture" height="" width="80%" >
+            <img src="/storage/{{$filename}}" art="picture" height="" width="80%" >
             </div>
         </div>
         <div class="card" style="float: right;height:30% ;width:55% ;margin: 0px 1% 2% 1%;">
         <div class="card-body"style="height:30% ;width:55%">
             <h3>{{$pname}}</h3>
             <ul>
-                <li>領取時間: {{$picktime}}</li>
-                <li>領取地點:{{$pickzip}} - {{$pickplace}}</li>
-                <li>數量:</li>
-                <li>post :by {{$uname}}</li>
+                <li>PickUp_Time: {{$picktime}}</li>
+                <li>PickUp_Place::{{$pickzip}} - {{$pickplace}}</li>
+                <li>Amount:{{$quantity}}</li>
+                <li>Post :by {{$username}}</li>
 
             </ul> 
             <hr>
@@ -27,6 +27,8 @@ my title
                 </p>
                 <br>
                 <br>
+                <button><a href="{{ url('savefood') }}">Back</a></button>
+                <button><a href="">Rquest</a></button>
         </div>
         </div>
     </div>

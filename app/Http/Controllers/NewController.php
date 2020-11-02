@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\Models\UploadedImage;
 
 class NewController extends Controller
 {
@@ -25,12 +26,15 @@ class NewController extends Controller
             $user = Auth::user();
             $username = $user->name;
         }
+        $prodcuts =DB::table('prodcuts')->get();
         $pid =DB::table('prodcuts')->value('id');
         $pname =DB::table('prodcuts')->value('pname');
         $picktime =DB::table('prodcuts')->value('picktime');
-        $pickzip =DB::table('prodcuts')->value('pickazip');
+        $pickzip =DB::table('prodcuts')->value('pickzip');
         $pickplace =DB::table('prodcuts')->value('pickplace');
-        return view('pages.savefood', compact('pid','username','pname','picktime','pickzip','pickplace'));
+        $filename =DB::table('prodcuts')->value('filename');
+        //$images = UploadedImage::all();
+        return view('pages.savefood', compact('prodcuts','pid','username','pname','picktime','pickzip','pickplace'));
         
     }
     public function share() {

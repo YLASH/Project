@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\NewController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UploadImageController;
+
+//use App\Http\Controllers\ShareController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,8 +38,19 @@ Route::get('/volunteers', [NewController::class, 'volunteers']);
 Route::get('/mylist/', [MemberController::class, 'mylist']);
 
 
-Route::get('/upload_page/', [ProductController::class, 'upload']);
+//Route::post('/preview', [ProductController::class, 'preview']);The GET method is not supported for this route. Supported methods: POST.?!
+//get 沒有request到東西
+Route::post('/upload', [ProductController::class, 'upload']);
+
+
 Route::get('/product/{pid}', [ProductController::class, 'index']);
+Route::get('/uploadimg', [UploadImageController::class, 'index']);
+Route::post('/addimg',[UploadImageController::class, 'upload']);
+
+
+Route::get('/delete/{id}/', [ProductController::class, 'delete']);
+Route::get('/edit/{id}/',[ProductController::class, 'editlist']);
+Route::get('/edit/{id}/',[ProductController::class, 'edit']);
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

@@ -17,10 +17,11 @@ class CreateProdcutsTable extends Migration
             $table->id();
             $table->string("pname");
             $table->string("picktime");
-            $table->string("pickazip");
+            $table->string("pickzip");
             $table->string("pickplace");
-            $table->string("quantity");
-            $table->string("description");
+            $table->string("quantity")->nullable();
+            $table->string("description")->nullable();
+            $table->string("filename")->nullable();
             $table->string("userid");
             $table->timestamps();
         });
