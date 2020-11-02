@@ -31,7 +31,7 @@ class ProductController extends Controller
       $filename =DB::table('prodcuts')->where('id', '=', $id)->value('filename');
       $uid =DB::table('prodcuts')->where('id', '=', $id)->value('userid');
       $username =DB::table('users')->where('id','=',$uid)->value('name');
-      
+            //$recom=DB::table('prodcuts')->where('id', '!=', $id ,'&&','userid','!=',$uid)->value('filename');
       return view('pages.products', compact('prodcuts','username','pname','picktime','pickzip','pickplace','quantity','dscrp','uid','filename'));
       
     }
@@ -46,6 +46,7 @@ class ProductController extends Controller
       $username=(Auth::user())->name;
       //DB::insert('insert into prodcuts (pname,picktime,pickzip,pickplace,quantity,description,userid) values(?,?,?,?,?,?,?)',[$pname,$picktime,$pickzip,$pickplace,$quantity,$dscrp,$userid]);
       return view('pages.preproducts',compact('username','pname','picktime','pickzip','pickplace','quantity','dscrp','userid'));
+      //return $pname;
     }
     public function upload(Request $request){
       $pname =$request->input('pdname');
@@ -58,9 +59,10 @@ class ProductController extends Controller
       $username=(Auth::user())->name;
       $path = $request->file('fileToUpload')->store('public');
       $filename =basename($path);
-      DB::insert('insert into prodcuts (pname,picktime,pickzip,pickplace,quantity,description,filename,userid) values(?,?,?,?,?,?,?,?)',[$pname,$picktime,$pickzip,$pickplace,$quantity,$dscrp,$filename,$userid]);
-      return view('pages.preproducts',compact('username','pname','picktime','pickzip','pickplace','quantity','dscrp','userid','filename'));
-      //return $filename;
+      //DB::insert('insert into prodcuts (pname,picktime,pickzip,pickplace,quantity,description,filename,userid) values(?,?,?,?,?,?,?,?)',[$pname,$picktime,$pickzip,$pickplace,$quantity,$dscrp,$filename,$userid]);
+      //return view('pages.preproducts',compact('username','pname','picktime','pickzip','pickplace','quantity','dscrp','userid','filename'));
+      return $pname. $picktime;
+      
     }
    
 

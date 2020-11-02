@@ -63,13 +63,13 @@ my title
         <br>
         
         <input type="submit" name="submitFood" value="POST!!!">
-        <input type="button" name="prevuFood"  value="PREVIEW!!!">
+        <input id="preview" type="button" name="prevuFood"  value="PREVIEW!!!">
         <input type="reset" name="resetshare" value="RESET!!!">
         
         </form>
         <!--<button name="prevuFood"><a href="{url('preproduct')}">PREVIEW!!!</a></button>-->
     </div> 
 </main>
- 
+<script ></script>
 
 @endsection

@@ -16,6 +16,7 @@ my title
     </form>
 </div>
      <!--for 產品列表-->
+     
      @forelse ($prodcuts as $prodcut)
     <div class="card" style="width:30%; float:left;margin: 0px 1% 2% 1%; padding-bottom:0;">
         <img class="card-img-top"src="/storage/{{$prodcut->filename}}" alt="Card image" style="width:100%">
