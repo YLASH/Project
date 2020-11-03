@@ -42,21 +42,7 @@ my title
         <p class="card-text">222 領取時間:picktime Some example text some example text. John Doe is an architect and engineer</p>
         <a href="#" class="btn btn-primary">See Profile</a>
         </div>
-    </div>
-    <div class="card" style="width:30% ;float:right;margin: 0px 2% 2% 1%;">
-        <img class="card-img-top" src="img_avatar1.png" alt="Card image" style="width:100%">
-        <div class="card-body">
-        <h4 class="card-title">John Doe</h4>
-        <p class="card-text">333 領取時間:picktime Some example text some example text. John Doe is an architect and engineer</p>
-        <a href="#" class="btn btn-primary">See Profile</a>
-        </div>
-    </div>
-    <div class="card" style="width:30%; float:left;margin: 0px 1% 2% 2%;">
-        <img class="card-img-top" src="img_avatar1.png" alt="Card image" style="width:100%">
-        <div class="card-body">
-        <h4 class="card-title">John Doe</h4>
-        <p class="card-text">444 領取時間:picktime Some example text some example text. John Doe is an architect and engineer</p>
-        <a href="#" class="btn btn-primary">See Profile</a>
-        </div>-->
-    </div>
+    </div>-->
+   
+
 @endsection

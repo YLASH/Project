@@ -15,7 +15,7 @@ class ShareController extends Controller
             $uid = $user->id;
         }
         $prodcuts =DB::table('prodcuts')->get();
-        $pid =DB::table('prodcuts')->select('filename')->get();
+        $pid =DB::table('prodcuts')->get('id');
        
         $num=count($prodcuts);
         
@@ -34,6 +34,6 @@ class ShareController extends Controller
         
 
         
-        return   ;
+        return   $pid;
     }
 }
