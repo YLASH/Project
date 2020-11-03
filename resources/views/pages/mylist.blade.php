@@ -22,7 +22,7 @@ my title
                <table>
                 @foreach($prodcuts as $prodcut)
                    <tr>
-                       <td><img src="#">{{$Spname}}</td>
+                       <td><img src="#">{{$pname}}</td>
                        <td><a href='edit'><center>Edit</center></a></td>
                        <td><a href='#/delete/{{$prodcut->id}}/'><center>Delete</center></a></td>
                     </tr>

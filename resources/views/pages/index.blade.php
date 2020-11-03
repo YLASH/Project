@@ -66,7 +66,7 @@ my title
   </div>
 <div class="alert alert-info col-3" role="alert" style="float: right ;height:250px;">
    <h4 class="alert-heading">
-   <img src='\images\earth2.png' art="picture" height="" width="90%" style="" >
+   <img src='\images\earth2.png' art="picture" height="" width="90%" >
   </h4>
 </div> 
 

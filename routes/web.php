@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\NewController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ShareController;
 use App\Http\Controllers\UploadImageController;
 
 //use App\Http\Controllers\ShareController;
@@ -51,6 +52,9 @@ Route::post('/addimg',[UploadImageController::class, 'upload']);
 Route::get('/delete/{id}/', [ProductController::class, 'delete']);
 Route::get('/edit/{id}/',[ProductController::class, 'editlist']);
 Route::get('/edit/{id}/',[ProductController::class, 'edit']);
+
+
+Route::get('/show/',[ShareController::class, 'randimg']);
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

@@ -5,6 +5,9 @@ my title
 @endsection
 
 @section('content')
+
+
+
 <main>
     <div>
         <form action="/upload/" method="post" enctype="multipart/form-data">
@@ -56,20 +59,24 @@ my title
         <br>
         <label for="fotoup">Upload a cute shot of your food</label><!--upload image-->
         <input type="file" name="fileToUpload" id="fileToUpload">
-        <input type="button" value="Upload Photo" id="fotoup" onclick=""> <a href="{{url('uploadimg')}}">...</a>  
+        <!--<input type="button" value="Upload Photo" id="fotoup" onclick=""> <a href="{{url('uploadimg')}}">...</a>  -->
         <br>
         <label for="dscrp">Tell us more about it</label>
         <input id="dscrp" name="dscrp" type="text" placeholder="write description">
         <br>
         
         <input type="submit" name="submitFood" value="POST!!!">
-        <input id="preview" type="button" name="prevuFood"  value="PREVIEW!!!">
+        <input id="preview" type="button" name="prevuFood"  value="PREVIEW!!!" onclick="">
         <input type="reset" name="resetshare" value="RESET!!!">
+        
         
         </form>
         <!--<button name="prevuFood"><a href="{url('preproduct')}">PREVIEW!!!</a></button>-->
     </div> 
 </main>
-<script ></script>
+
+
 
 @endsection
+
+
