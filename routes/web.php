@@ -38,23 +38,19 @@ Route::get('/volunteers', [NewController::class, 'volunteers']);
 
 Route::get('/mylist/', [MemberController::class, 'mylist']);
 
+Route::get('/product/{pid}', [ProductController::class, 'index']);
 
 //Route::post('/preview', [ProductController::class, 'preview']);The GET method is not supported for this route. Supported methods: POST.?!
 //get 沒有request到東西
 Route::post('/upload', [ProductController::class, 'upload']);
 
 
-Route::get('/product/{pid}', [ProductController::class, 'index']);
-Route::get('/uploadimg', [UploadImageController::class, 'index']);
-Route::post('/addimg',[UploadImageController::class, 'upload']);
-
-
-Route::get('/delete/{id}/', [ProductController::class, 'delete']);
+Route::get('/delete/{pid}/', [ProductController::class, 'delete']);
 Route::get('/edit/{id}/',[ProductController::class, 'editlist']);
-Route::get('/edit/{id}/',[ProductController::class, 'edit']);
+//Route::get('/edit/{pid}/',[ProductController::class, 'edit']);
 
 
-Route::get('/show/',[ShareController::class, 'randimg']);
+Route::get('/show/',[ShareController::class, 'show']);
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

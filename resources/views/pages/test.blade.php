@@ -1,6 +1,28 @@
+@extends('layouts.base')
 
-@foreach($randpd as $randp)
-{{$randp->id}}
-{{$randp->filename}}
-<img src="/storage/{{$randp->filename}}" art="picture" height="" width="50%" >
-@endforeach
+@section('title')
+my title
+@endsection
+
+@section('content')
+
+<div>
+    <p>
+        ijvo;jaewiv;ids;dsvjkdv
+    </p>
+    <ul>
+        <li>1        </li>
+        <li>1        </li>
+        <li>1        </li>
+        <li>1        </li>
+    </ul>
+</div>
+<div>
+    <ul>
+        <li>1        </li>
+        <li>1        </li>
+        <li>1        </li>
+        <li>1        </li>
+    </ul>
+</div>
+@endsection

@@ -16,9 +16,9 @@
   <body>
      <div class='container'>
      @include('includes.menu')
-     <hr>
+     <br>
      @yield('content')
-     <hr>
+     <br>
      @include('includes.footer')
      </div>
  

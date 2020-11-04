@@ -14,7 +14,7 @@ my title
         <form id="stuff" action="/upload/" method="post" enctype="multipart/form-data">
         @csrf
         <label for="pdname">What is it you're sharing today?</label>
-        <input type="text"  id="pdname" name="pdname"placeholder="Insert Product Name"><br>
+        <input type="text"  id="pdname" name="pdname" placeholder="Insert Product Name"><br>
         <label>Collection By</label>
         <select id=collectinfo name="date" required>
         <?php 

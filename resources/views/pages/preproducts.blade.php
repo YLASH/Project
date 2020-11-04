@@ -8,10 +8,10 @@ my title
     <div class="container" >
         <div class="card" style="float: left; height:30%; width:40%;margin: 0px 1% 2% 1%;"> 
         <div class="card-body">
-            <img src='\images\img02.jpg' art="picture" height="" width="80%" >
+            <img src='/storage/{{$filename}}' art="picture" height="300px" width="80%" >
             </div>
         </div>
-        <div class="card" style="float: right;height:30% ;width:55% ;margin: 0px 1% 2% 1%;">
+        <div class="card" style="float: right;height:'300px' ;width:55% ;margin: 0px 1% 2% 1%;">
         <div class="card-body"style="height:30% ;width:55%">
             <h3>{{$pname}}</h3>
             <ul>
@@ -30,10 +30,16 @@ my title
         </div>
         </div>
     </div>
-    <button name="editshare"><a href="#">EDIT!!!</a></button>
-    <button name="backshare" onclick="history.back()">back</button>
-    <button name="submitFood"><a href="#">SHARE!!!</a></button>
-    <!--<input type="submit" name="submitFood" value="SHARE!!!"> -->
+    <div>
+    <center>
+   
+    <button name="backshare"><a href="{{url('savefood')}}">back</a></button>
+    </center>
+    </div>
+    
+    <!-- <button name="editshare" style="align-self: right;"><a href="/edit/{id}">EDIT!!!</a></button>
+    <input type="submit" name="submitFood" value="SHARE!!!">
+    <button name="submitFood"><a href="#">SHARE!!!</a></button> -->
     <!--<input type="submit" name="prevuFood" value="cancel"> -->         
 
 @endsection    

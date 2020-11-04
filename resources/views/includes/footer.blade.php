@@ -1,4 +1,4 @@
-
+<hr>
 <div class="card col-12"  style="border:none; background-color:	#FFFFFF;" >
   <div class="card-header" style="border:none; background-color:	#FFFFFF;">
   

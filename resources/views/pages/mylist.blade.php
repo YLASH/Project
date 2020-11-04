@@ -23,7 +23,7 @@ my title
                 @foreach($prodcuts as $prodcut) 
                    <tr>
                        <td><img src="/storage/{{$prodcut->filename}}"height="50px" width="50px">{{$prodcut->pname}}</td>
-                       <td><a href='edit'><center>Edit</center></a></td>
+                       <td><a href='edit/{{$prodcut->id}}'><center>Edit</center></a></td>
                        <td><a href='#/delete/{{$prodcut->id}}/'><center>Delete</center></a></td>
                     </tr>
                @endforeach 

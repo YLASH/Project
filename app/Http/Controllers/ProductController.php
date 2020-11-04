@@ -62,9 +62,7 @@ class ProductController extends Controller
       $path = $request->file('fileToUpload')->store('public');
       $filename =basename($path);
       DB::insert('insert into prodcuts (pname,picktime,pickzip,pickplace,quantity,description,filename,userid) values(?,?,?,?,?,?,?,?)',[$pname,$picktime,$pickzip,$pickplace,$quantity,$dscrp,$filename,$userid]);
-      //return view('pages.preproducts',compact('username','pname','picktime','pickzip','pickplace','quantity','dscrp','userid','filename'));
-      //return $pname. $picktime;
-      
+      return view('pages.preproducts',compact('username','pname','picktime','pickzip','pickplace','quantity','dscrp','userid','filename'));
     }
    
 
@@ -87,10 +85,11 @@ class ProductController extends Controller
       $pickplace =DB::table('prodcuts')->where('id', '=', $id)->value('pickplace');
       $quantity=DB::table('prodcuts')->where('id', '=', $id)->value('quantity');
       $dscrp =DB::table('prodcuts')->where('id', '=', $id)->value('description');
+      $filename =DB::table('prodcuts')->where('id', '=', $id)->value('filename');
       $uid =DB::table('prodcuts')->where('id', '=', $id)->value('userid');
       $username =DB::table('users')->where('id','=',$uid)->value('name');
       
-      return view('pages.edit', compact('prodcuts','username','pname','picktime','pickzip','pickplace','quantity','dscrp','username'));
+      return view('pages.edit', compact('prodcuts','username','pname','picktime','pickzip','pickplace','quantity','dscrp','username','filename'));
       }
       public function edit(){
         //update
