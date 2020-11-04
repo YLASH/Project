@@ -18,7 +18,7 @@ my title
 
     <div class="card" style="float: right;height:30% ;width:55% ;margin: 0px 1% 2% 1%;">
             <div class="card-body"style="height:30% ;width:90%">
-            <form id="stuff" action="/upload/" method="post" enctype="multipart/form-data">
+            <form id="stuff" action="#" method="post" enctype="multipart/form-data">
             @csrf
             <div >
             <input type="text"  id="pdname" name="pdname" placeholder="Insert Product Name"  value="{{$pname}}"><br>
@@ -78,7 +78,8 @@ my title
             <label for="dscrp">Tell us more about it</label>
             <input id="dscrp" name="dscrp" type="text" placeholder="write description">
             <br>
-
+            <button><a herf="{{url('mylist')}}"></a></button>
+ 
             </form>
             </div>
     </div>       
