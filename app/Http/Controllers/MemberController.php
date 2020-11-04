@@ -13,9 +13,10 @@ class MemberController extends Controller
             $user = Auth::user();
             $username = $user->name;
             $userid =$user->id;
-        $prodcuts =DB::table('prodcuts')->get(); 
-        $pname =DB::table('prodcuts')->where('userid', '=', $userid)->value('pname');   
-        return view('pages.mylist', compact('username','prodcuts','pname'));
+        $prodcuts =DB::table('prodcuts')->where('userid', '=', $userid)->get(); 
+        
+          
+        return view('pages.mylist', compact('username','prodcuts'));
         }
         
         return view('auth.login', compact('username'));

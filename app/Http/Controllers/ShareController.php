@@ -14,12 +14,13 @@ class ShareController extends Controller
             $username = $user->name;
             $uid = $user->id;
         }
-        $prodcuts =DB::table('prodcuts')->get();
+        $randpd =DB::table('prodcuts')->where('userid','!=',$uid)->inRandomOrder()->limit(3)->get();
+        
         $pid =DB::table('prodcuts')->get('id');
        
-        $num=count($prodcuts);
+        //$num=count($prodcuts);//where('userid','!=',$uid)
         
-        $count = 0; //目前取得的數字個數
+        /*$count = 0; //目前取得的數字個數
         $lotto =array();
         while ($count < 3) {
             $t = rand(1,$num);//先取得一個候選的隨機數
@@ -29,11 +30,18 @@ class ShareController extends Controller
         }  
         sort($lotto);
         foreach ($lotto as $nu) {
-            //echo $nu ;
-        }
+            echo $nu;
+        }*/
+            //echo in_array($nu, $filename); 
+            return  view('pages.test', compact('randpd'));
+            //SELECT * FROM `prodcuts`
+            //ORDER BY RAND()
+            //LIMIT 5   
+              
+       
+           //return $pid . $prodcuts;
+     
         
-
         
-        return   $pid;
     }
 }

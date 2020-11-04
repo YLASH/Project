@@ -8,9 +8,10 @@ my title
 
 
 
+
 <main>
     <div>
-        <form action="/upload/" method="post" enctype="multipart/form-data">
+        <form id="stuff" action="/upload/" method="post" enctype="multipart/form-data">
         @csrf
         <label for="pdname">What is it you're sharing today?</label>
         <input type="text"  id="pdname" name="pdname"placeholder="Insert Product Name"><br>
@@ -69,14 +70,16 @@ my title
         <input id="preview" type="button" name="prevuFood"  value="PREVIEW!!!" onclick="">
         <input type="reset" name="resetshare" value="RESET!!!">
         
-        
+        <div id='previewDiv'>&nbsp;</div>
         </form>
         <!--<button name="prevuFood"><a href="{url('preproduct')}">PREVIEW!!!</a></button>-->
     </div> 
 </main>
 
-
-
 @endsection
+
+
+
+
 
 

@@ -33,8 +33,9 @@ class NewController extends Controller
         $pickzip =DB::table('prodcuts')->value('pickzip');
         $pickplace =DB::table('prodcuts')->value('pickplace');
         $filename =DB::table('prodcuts')->value('filename');
+        $postime =DB::table('prodcuts')->value('created_at');
         //$images = UploadedImage::all();
-        return view('pages.savefood', compact('prodcuts','pid','username','pname','picktime','pickzip','pickplace'));
+        return view('pages.savefood', compact('prodcuts','pid','username','pname','picktime','pickzip','pickplace','postime'));
         
     }
     public function share() {

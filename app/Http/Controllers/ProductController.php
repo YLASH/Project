@@ -20,6 +20,7 @@ class ProductController extends Controller
       if (Auth::check()) {
           $user = Auth::user();
           $username = $user->name;
+          $uid = $user->id;
       }
       $prodcuts =DB::table('prodcuts')->where('id', '=', $id)->get();
       $pname =DB::table('prodcuts')->where('id', '=', $id)->value('pname');
@@ -29,10 +30,11 @@ class ProductController extends Controller
       $quantity=DB::table('prodcuts')->where('id', '=', $id)->value('quantity');
       $dscrp =DB::table('prodcuts')->where('id', '=', $id)->value('description');
       $filename =DB::table('prodcuts')->where('id', '=', $id)->value('filename');
-      $uid =DB::table('prodcuts')->where('id', '=', $id)->value('userid');
-      $username =DB::table('users')->where('id','=',$uid)->value('name');
-            //$recom=DB::table('prodcuts')->where('id', '!=', $id ,'&&','userid','!=',$uid)->value('filename');
-      return view('pages.products', compact('prodcuts','username','pname','picktime','pickzip','pickplace','quantity','dscrp','uid','filename'));
+      $postime =DB::table('prodcuts')->where('id', '=', $id)->value('created_at');
+      $userid =DB::table('prodcuts')->where('id', '=', $id)->value('userid');
+      $username =DB::table('users')->where('id','=',$userid)->value('name');
+      $randpds =DB::table('prodcuts')->where('userid','!=',$uid)->inRandomOrder()->limit(4)->get();
+      return view('pages.products', compact('prodcuts','username','pname','picktime','pickzip','pickplace','quantity','dscrp','uid','filename','userid','randpds','postime'));
       
     }
     public function preview(Request $request){
