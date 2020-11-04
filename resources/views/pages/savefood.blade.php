@@ -6,10 +6,10 @@ my title
 
 @section('content')
 
-<div class="jumbotron">
+<div class="jumbotron" style="background-color:	#C9DECF;">
   <h3 class="display-6"> Hello, {{$username}} !!</h3>
   <p class="lead">Find what need to be saved around you!!</p>
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <p></p>
   <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Enter your zip code" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>

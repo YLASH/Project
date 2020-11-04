@@ -120,7 +120,7 @@
           <a href="register">Register</a>
         </p>
         <p>
-          <a href="#!">Required products</a>
+          <a href="#!">Requested products</a>
         </p>
         <p>
         </p>
