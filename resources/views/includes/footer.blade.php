@@ -1,10 +1,10 @@
 
-<!-- <div class="card col-12"  style="border:none"> -->
-  <!-- <div class="card-header">
-  <h3><img src='\images\logo.png' height="" width="20%" '>
-   <h3> Save Food</h3>
-  </div> -->
-
+<div class="card col-12"  style="border:none; background-color:	#FFFFFF;" >
+  <div class="card-header" style="border:none; background-color:	#FFFFFF;">
+  
+   <h3> </h3>
+  </div>
+</div>
 <!-- <div class="card-body">
 
   
@@ -67,6 +67,7 @@
 
 
   <!-- Footer Links -->
+  <footer>
   <div class="container text-center text-md-left mt-5">
 
     <!-- Grid row -->
@@ -196,10 +197,11 @@
   <!-- Copyright -->
   
 
-</footer>
+
 <!-- Footer -->
 
 
 </div>
+</footer>
 
 

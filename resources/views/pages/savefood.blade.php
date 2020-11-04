@@ -17,9 +17,9 @@ my title
 </div>
      <!--for 產品列表-->
      @forelse ($prodcuts as $prodcut)
-    <div class="card" style="width:30%; float:left;margin: 0px 1% 2% 1%; padding-bottom:0;">
-        <img class="card-img-top"src="/storage/{{$prodcut->filename}}" alt="Card image" style="width:100%">
-        <p align="right"style="margin:0;">Poat-time:2020-10-28 11a.m.</p>
+    <div class="card" style="width:30%; float:left;margin: 0px 1% 2% 1%; padding-bottom:0; ">
+        <img class="card-img-top"src="/storage/{{$prodcut->filename}}" alt="Card image" style="width:100%;">
+        <p align="right"style="margin:0;">Post-time:2020-10-28 11a.m.</p>
         <div class="card-body"  style="padding-top:0;">
         <h5 class="card-title" >{{$prodcut->pname}}</h5>
         <div style="width:75%; float:left;margin-top: 0;">
@@ -57,5 +57,5 @@ my title
         <p class="card-text">444 領取時間:picktime Some example text some example text. John Doe is an architect and engineer</p>
         <a href="#" class="btn btn-primary">See Profile</a>
         </div>-->
-    </div>
+    <!-- </div> -->
 @endsection
