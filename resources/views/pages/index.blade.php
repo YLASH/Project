@@ -6,8 +6,15 @@ my title
 
 @section('content')
 
-<div class="jumbotron" style="background-color:	#E8FFF5;">
+<div class="jumbotron" style="background-color:	#C9DECF;">
   <h1 class="display-4"> Hello, {{$username}} </h1>
+  <img src="\images\food14.png" width="50">
+  <img src="\images\food15.png" width="50">
+  <img src="\images\food16.png" width="50">
+  <img src="\images\food17.png" width="50">
+  <img src="\images\food18.png" width="50">
+  <img src="\images\food19.png" width="50">
+  <img src="\images\food20.png" width="50">
   <p class="lead">Do you ever think to make a little bit change to help our environment? </p>
   <hr class="my-4" >
   <p style="text-align: right;">This website allows any one who is willing to 
@@ -21,7 +28,7 @@ my title
    <p> </p>
 </div> -->
 
-   <div id="carouselExampleIndicators" class=" alert alert-info carousel slide col-3" data-ride="carousel" style="float: left; height:200px;background-color:#FBFBFF;">
+   <div id="carouselExampleIndicators" class=" alert alert-info carousel slide col-3" data-ride="carousel" style="float: left; height:200px;background-color:#FFFFFF;border:none;">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
       <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -49,7 +56,7 @@ my title
 </div>
   
   
-<div class="alert alert-success col-9" role="alert" style="float: right ;height:200px;background-color:	#FBFBFF;">
+<div class="alert alert-success col-9" role="alert" style="float: right ;height:200px;background-color:	#FFFFFF;border:none;">
    <h4 class="alert-heading">Statistics</h4>
    <p>Based on the waste information from World Counts, there is a third of the world's food is wasted. </p>
   <p><iframe title='Tons of food lost or wasted' src='https://www.theworldcounts.com/embed/challenges/101?background_color=#FBFBFF&color=black&font_family=%22Helvetica+Neue%22%2C+Arial%2C+sans-serif&font_size=14' style='border:none;' height='100' width='300' align='left' ></iframe>
@@ -58,13 +65,13 @@ my title
   <p class="mb-0"></p>
  </div>    
 
-<div class="alert alert-info col-9" role="alert" style="float: left;height:250px;">
+<div class="alert alert-info col-9" role="alert" style="float: left;height:250px;background-color:#E1F1E7;">
    <h4 class="alert-heading">Be part of us.</h4>
   <p>Join us to be a volunteer and save food!</p>
   <p class="mb-0">Whenever you want to join, it is never too late to be a food hero.</p>
   <img src="\images\volunteer.png" style="float:bottom;height:130px;" >
   </div>
-<div class="alert alert-info col-3" role="alert" style="float: right ;height:250px;">
+<div class="alert alert-info col-3" role="alert" style="float: right ;height:250px;background-color:#E1F1E7;">
    <h4 class="alert-heading">
    <img src='\images\earth2.png' art="picture" height="" width="90%" >
   </h4>
@@ -76,7 +83,7 @@ background-color:#D7FFEE;">
 </div> -->
 
 
-<div id="carouselExampleIndicators" class=" alert alert-info carousel slide col-3" data-ride="carousel" style="float: left; height:250px;background-color:#D7FFEE;">
+<div id="carouselExampleIndicators" class=" alert alert-info carousel slide col-3" data-ride="carousel" style="float: left; height:250px;background-color:#FFFFFF;border:none;">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -104,7 +111,7 @@ background-color:#D7FFEE;">
 </div>
 
 
-<div class="alert alert-success col-9" role="alert" height="500px" " width="100%" style="float: right ;background-color:#D7FFEE;height:250px;">
+<div class="alert alert-success col-9" role="alert" height="500px" " width="100%" style="float: right ;background-color:#FFFFFF;height:250px;border:none;">
   <h4 class="alert-heading">Cooperative Store</h4>
   <p>H2O Hotel</p>
   <hr>
