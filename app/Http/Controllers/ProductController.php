@@ -61,9 +61,9 @@ class ProductController extends Controller
       $username=(Auth::user())->name;
       $path = $request->file('fileToUpload')->store('public');
       $filename =basename($path);
-      //DB::insert('insert into prodcuts (pname,picktime,pickzip,pickplace,quantity,description,filename,userid) values(?,?,?,?,?,?,?,?)',[$pname,$picktime,$pickzip,$pickplace,$quantity,$dscrp,$filename,$userid]);
+      DB::insert('insert into prodcuts (pname,picktime,pickzip,pickplace,quantity,description,filename,userid) values(?,?,?,?,?,?,?,?)',[$pname,$picktime,$pickzip,$pickplace,$quantity,$dscrp,$filename,$userid]);
       //return view('pages.preproducts',compact('username','pname','picktime','pickzip','pickplace','quantity','dscrp','userid','filename'));
-      return $pname. $picktime;
+      //return $pname. $picktime;
       
     }
    

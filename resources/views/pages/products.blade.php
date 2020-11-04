@@ -33,7 +33,7 @@ my title
                 <button onclick="myFunction()">Request</button>
                 <script>
                     function myFunction() {
-                    alert("You sent the request~");
+                    prompt("Your request has been sent~");
                     }
                 </script>
         </div>
