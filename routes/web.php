@@ -51,7 +51,7 @@ Route::get('/edit/{pid}/',[ProductController::class, 'editlist']);
 Route::post('/up/{pid}',[ProductController::class, 'edit']);
 
 
-Route::get('/show/',[ShareController::class, 'show']);
+Route::get('/shows/',[ShareController::class, 'show']);
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

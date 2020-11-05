@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class ShareController extends Controller
 {
     public function show() {
-        
+        //test
        
         return view('pages.test');
         
