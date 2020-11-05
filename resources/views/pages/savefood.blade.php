@@ -13,7 +13,9 @@ my title
   <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Enter your zip code" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+      </form>
+      <iframe width="300" height="225" frameborder="0" style="border:0; float:right; " src="https://www.google.com/maps/embed/v1/view?zoom=10&center=22.6351%2C120.3355&key=AIzaSyA1vIgshSL0IKqJbIZf2ZPQEetUIMLgiFY" allowfullscreen></iframe>
+    
 </div>
      <!--for 產品列表-->
      

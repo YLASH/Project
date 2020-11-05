@@ -29,13 +29,24 @@ my title
                 </p>
                 <br>
                 <br>
-                <button><a href="{{ url('savefood') }}">Back</a></button>
-                <button onclick="myFunction()">Request</button>
-                <script>
-                    function myFunction() {
-                    prompt("Your request has been sent~");
-                    }
-                </script>
+                <button><a href="{{ url('savefood') }}" style="color: inherit;">Back</a></button>
+                @if (Route::has('login'))
+                   @auth 
+                    <button onclick="askrequest()">Request</button>
+                    <script>
+                        function askrequest() {
+                        prompt("Your request has been sent~");
+                        }
+                    </script>
+                    @else
+                    <button onclick="askrequestx()">Request</button>
+                    <script>
+                        function askrequestx() {
+                            alert("Please log-in to ask for the request");
+                        }
+                    </script>
+                    @endif
+                @endif    
         </div>
         </div>
     </div>

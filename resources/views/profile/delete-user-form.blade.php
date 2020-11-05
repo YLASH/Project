@@ -1,4 +1,4 @@
-{{-- <!-- <x-jet-action-section>
+ <x-jet-action-section>
     <x-slot name="title">
         {{ __('Delete Account') }}
     </x-slot>
@@ -16,10 +16,10 @@
             <x-jet-danger-button wire:click="confirmUserDeletion" wire:loading.attr="disabled">
                 {{ __('Delete Account') }}
             </x-jet-danger-button>
-        </div> -->
+        </div> 
 
         <!-- Delete User Confirmation Modal -->
-        <!-- <x-jet-dialog-modal wire:model="confirmingUserDeletion">
+        <x-jet-dialog-modal wire:model="confirmingUserDeletion">
             <x-slot name="title">
                 {{ __('Delete Account') }}
             </x-slot>
@@ -48,4 +48,4 @@
             </x-slot>
         </x-jet-dialog-modal>
     </x-slot>
-</x-jet-action-section> --> --}}
+</x-jet-action-section> 

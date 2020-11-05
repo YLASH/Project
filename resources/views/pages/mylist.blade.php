@@ -19,12 +19,16 @@ my title
         <div class="card bg-light text-dark">
             <div class="card-body">
                 
-               <table>
+               <table width='100%' style="table-layout:fixed;">
                 @foreach($prodcuts as $prodcut) 
                    <tr>
                        <td><img src="/storage/{{$prodcut->filename}}"height="50px" width="50px">{{$prodcut->pname}}</td>
-                       <td><a href='edit/{{$prodcut->id}}'><center>Edit</center></a></td>
-                       <td><a href='/#delete/{{$prodcut->id}}/'><center>Delete</center></a></td>
+                       <td> </td>
+                       <td>who sent request</td>
+                       <td>user1 , user2 , user3 , ...</td>
+                       <td> </td>
+                       <td><a href='edit/{{$prodcut->id}}' style="color: inherit;"><center>Edit</center></a></td>
+                       <td><a href='/#delete/{{$prodcut->id}}/' style="color: inherit;"><center>Delete</center></a></td>
                     </tr>
                @endforeach 
                </table> 

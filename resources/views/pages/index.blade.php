@@ -19,7 +19,7 @@ my title
   <hr class="my-4" >
   <p style="text-align: right;">This website allows any one who is willing to 
   provide little power helping the environment to have a chance being a food hero.</p>
-  <a class="btn btn-primary btn-lg" href="#" role="button" style="float: right">Learn more</a>
+  <a class="btn btn-primary btn-lg" href="{{ url('register') }}" role="button" style="float: right">Join US!!</a>
 </div>
 
 <!-- <div class="alert alert-success col-3" role="alert" style="float: left; height:200px; background-color:	#FBFBFF;">
@@ -56,14 +56,16 @@ my title
 </div>
   
   
-<div class="alert alert-success col-9" role="alert" style="float: right ;height:200px;background-color:	#FFFFFF;border:none;">
+<div class="alert alert-success col-6" role="alert" style="float: left ;height:200px;background-color:	#FFFFFF;border:none;">
    <h4 class="alert-heading">Statistics</h4>
    <p>Based on the waste information from World Counts, there is a third of the world's food is wasted. </p>
-  <p><iframe title='Tons of food lost or wasted' src='https://www.theworldcounts.com/embed/challenges/101?background_color=#FBFBFF&color=black&font_family=%22Helvetica+Neue%22%2C+Arial%2C+sans-serif&font_size=14' style='border:none;' height='4%' width='20%' align='left' ></iframe>
-  </p>
-  <br>
-  <p class="mb-0"></p>
- </div>    
+  
+ </div>  
+ <div class="alert alert-success col-3" role="alert" style="float: right ;height:200px;background-color:	#FFFFFF;border:none;">
+    <h2><b><iframe title='Tons of food lost or wasted' src='https://www.theworldcounts.com/embed/challenges/101?background_color=white&color=black&font_family=%22Helvetica+Neue%22%2C+Arial%2C+sans-serif&font_size=14' style='border: none; padding:0,0,0,0; align:left;' height='150px' width='350' align='left'></iframe>
+    </b></h2>
+  
+ </div>  
 
 <div class="alert alert-info col-9" role="alert" style="float: left;height:250px;background-color:#E1F1E7;">
    <h4 class="alert-heading">Be part of us.</h4>

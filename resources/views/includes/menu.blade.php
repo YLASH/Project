@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-expand-lg navbar-light "   style="background-color:'＃FFF8D7	'	;">
   <img src='\images\logo.png' width="50">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,13 +34,13 @@
     @if (Route::has('login'))
           @auth 
             <td class="nav-item">
-               <a class="nav-link" href="{{ url('/logout') }}">logout</a>
+               <a class="nav-link" href="{{ url('/logout') }}" style="color: inherit;">logout</a>
             </td>
             <td >
               <div class="dropdown">
-                <button class="dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="dropdown-toggle" style="color: inherit;" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Account
-                </button>
+</a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2" >
                   <a class="dropdown-item"  href="{{ route('profile.show') }}">Profile</a>
                   <a class="dropdown-item"  href="{{ url('/mylist/') }}">Mylist</a>
@@ -50,11 +51,11 @@
             </td>
           @else
             <td class="nav-item">
-               <a class="nav-link" href="{{ url('login') }}">Login</a>
+               <a class="nav-link" href="{{ url('login') }}" style="color: inherit;">Login</a>
             </td>
             @if(Route::has('register'))
             <td class="nav-item">
-               <a class="nav-link" href="{{ url('register') }}">Register</a>
+               <a class="nav-link" href="{{ url('register') }}" style="color: inherit;">Register</a>
              </td>
             @endif
 
