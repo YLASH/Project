@@ -23,6 +23,9 @@
       <li class="nav-item">
         <a class="nav-link" href="{{ url('aboutus') }}">About Us</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url('contactus') }}">Contact us <span class="sr-only">(current)</span></a>
+      </li>
       </ul>
       
 

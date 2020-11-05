@@ -1,4 +1,4 @@
-@extends('layouts.base')
+{{-- <!-- @extends('layouts.base')
 @section('title')
 my title
 @endsection
@@ -62,4 +62,4 @@ my title
         </div>
     </x-jet-authentication-card>
 </x-guest-layout>
-@endsection
+@endsection --> --}}
