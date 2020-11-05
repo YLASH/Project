@@ -10,18 +10,19 @@ my title
         <div class="card-body">
         <img src='/storage/{{$filename}}' art="picture" height="100%" width="" ><br>
         <label for="fotoup">Upload a cute shot of your food</label><!--upload image-->
-        <input type="file" name="fileToUpload" id="fileToUpload">
-            <!--<input type="button" value="Upload Photo" id="fotoup" onclick=""> <a href="{{url('uploadimg')}}">...</a>  -->
+         <!--<input type="file" name="fileToUpload" id="fileToUpload">
+           <input type="button" value="Upload Photo" id="fotoup" onclick=""> <a href="{{url('uploadimg')}}">...</a>  -->
         <br>
         </div>
     </div>
 
     <div class="card" style="float: right;height:30% ;width:55% ;margin: 0px 1% 2% 1%;">
             <div class="card-body"style="height:30% ;width:90%">
-            <form id="stuff" action="#" method="post" enctype="multipart/form-data">
+            <form id="stuff" action="/up/{{$pid}}" method="post" enctype="multipart/form-data">
             @csrf
             <div >
             <input type="text"  id="pdname" name="pdname" placeholder="Insert Product Name"  value="{{$pname}}"><br>
+            <input type="hidden" id="pid" name="pid" value="{{$pid}}">
             <ul>
             <li>Post_Time: </li>
             <li>PickUp_Time:
@@ -76,7 +77,7 @@ my title
             <h5>  Description</h5>
             <br>
             <label for="dscrp">Tell us more about it</label>
-            <input id="dscrp" name="dscrp" type="text" placeholder="write description">
+            <input id="dscrp" name="dscrp" type="text" placeholder="write description" value="{{$dscrp}}">
             <br>
             <button><a herf="{{url('mylist')}}"></a></button>
  

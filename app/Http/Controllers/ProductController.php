@@ -37,7 +37,7 @@ class ProductController extends Controller
       return view('pages.products', compact('prodcuts','username','pname','picktime','pickzip','pickplace','quantity','dscrp','uid','filename','userid','randpds','postime'));
       
     }
-    public function preview(Request $request){
+  /*  public function preview(Request $request){
       $pname =$request->input('pdname');
       $picktime=$request->input('year').'-'.$request->input('month').'-'.$request->input('date').' '.$request->input('hour').':'.$request->input('minute');
       $pickzip=$request->input('zip');
@@ -49,8 +49,10 @@ class ProductController extends Controller
       //DB::insert('insert into prodcuts (pname,picktime,pickzip,pickplace,quantity,description,userid) values(?,?,?,?,?,?,?)',[$pname,$picktime,$pickzip,$pickplace,$quantity,$dscrp,$userid]);
       return view('pages.preproducts',compact('username','pname','picktime','pickzip','pickplace','quantity','dscrp','userid'));
       //return $pname;
-    }
+    }*/
+    
     public function upload(Request $request){
+      
       $pname =$request->input('pdname');
       $picktime=$request->input('year').'-'.$request->input('month').'-'.$request->input('date').' '.$request->input('hour').':'.$request->input('minute');
       $pickzip=$request->input('zip');
@@ -66,32 +68,34 @@ class ProductController extends Controller
     }
    
 
-    public function delete($id){
+    public function delete($pid){
       $prodcuts =DB::table('prodcuts')->get();
+      echo "Are you going to delete ".$pid ;
       DB::table('prodcuts')->where('id', '=', $id)->delete();
       return view('pages.mylist',compact('prodcuts'));
     }
-    public function editlist($id) {
+    public function editlist($pid) {
         
       $username = "Guest";
       if (Auth::check()) {
           $user = Auth::user();
           $username = $user->name;
       }
-      $prodcuts =DB::table('prodcuts')->where('id', '=', $id)->get();
-      $pname =DB::table('prodcuts')->where('id', '=', $id)->value('pname');
-      $picktime =DB::table('prodcuts')->where('id', '=', $id)->value('picktime');
-      $pickzip =DB::table('prodcuts')->where('id', '=', $id)->value('pickzip');
-      $pickplace =DB::table('prodcuts')->where('id', '=', $id)->value('pickplace');
-      $quantity=DB::table('prodcuts')->where('id', '=', $id)->value('quantity');
-      $dscrp =DB::table('prodcuts')->where('id', '=', $id)->value('description');
-      $filename =DB::table('prodcuts')->where('id', '=', $id)->value('filename');
-      $uid =DB::table('prodcuts')->where('id', '=', $id)->value('userid');
+      $prodcuts =DB::table('prodcuts')->where('id', '=', $pid)->get();
+      $pname =DB::table('prodcuts')->where('id', '=', $pid)->value('pname');
+      $picktime =DB::table('prodcuts')->where('id', '=', $pid)->value('picktime');
+      $pickzip =DB::table('prodcuts')->where('id', '=', $pid)->value('pickzip');
+      $pickplace =DB::table('prodcuts')->where('id', '=', $pid)->value('pickplace');
+      $quantity=DB::table('prodcuts')->where('id', '=', $pid)->value('quantity');
+      $dscrp =DB::table('prodcuts')->where('id', '=', $pid)->value('description');
+      $filename =DB::table('prodcuts')->where('id', '=', $pid)->value('filename');
+      $uid =DB::table('prodcuts')->where('id', '=', $pid)->value('userid');
       $username =DB::table('users')->where('id','=',$uid)->value('name');
       
-      return view('pages.edit', compact('prodcuts','username','pname','picktime','pickzip','pickplace','quantity','dscrp','username','filename'));
+      return view('pages.edit', compact('pid','prodcuts','username','pname','picktime','pickzip','pickplace','quantity','dscrp','username','filename'));
       }
       public function edit(Request $request){
+        $pid =$request->input('pid');
         $pname =$request->input('pdname');
         //$picktime=$request->input('year').'-'.$request->input('month').'-'.$request->input('date').' '.$request->input('hour').':'.$request->input('minute');
         $pickzip=$request->input('zip');
@@ -100,8 +104,10 @@ class ProductController extends Controller
         $dscrp=$request->input('dscrp');
         $path = $request->file('fileToUpload')->store('public');
         $filename =basename($path);
+        DB::table('prodcuts')->where('id', '=', $pid)->update(['pickplace'=>$pickplace]);
         //DB::Update('insert into prodcuts (pname,picktime,pickzip,pickplace,quantity,description,filename,userid) values(?,?,?,?,?,?,?,?)',[$pname,$picktime,$pickzip,$pickplace,$quantity,$dscrp,$filename,$userid]);
-        return redirect("/mylist");
+        return redirect("/edit/{pid}");
+        //return $pid.$pickplace;
       }
     
 }

@@ -46,8 +46,8 @@ Route::post('/upload', [ProductController::class, 'upload']);
 
 
 Route::get('/delete/{pid}/', [ProductController::class, 'delete']);
-Route::get('/edit/{id}/',[ProductController::class, 'editlist']);
-//Route::get('/edit/{pid}/',[ProductController::class, 'edit']);
+Route::get('/edit/{pid}/',[ProductController::class, 'editlist']);
+Route::post('/up/{pid}',[ProductController::class, 'edit']);
 
 
 Route::get('/show/',[ShareController::class, 'show']);

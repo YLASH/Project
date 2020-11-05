@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light "   style="background-color:	;">
+<nav class="navbar navbar-expand-lg navbar-light "   style="background-color:'＃FFF8D7	'	;">
   <img src='\images\logo.png' width="50">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -29,9 +29,6 @@
     <tr>
     @if (Route::has('login'))
           @auth 
-            <td class="nav-item" >
-               <a class="nav-link" href="{{ url('/dashboard') }}">Dashboard</a>
-            </td>
             <td class="nav-item">
                <a class="nav-link" href="{{ url('/logout') }}">logout</a>
             </td>
