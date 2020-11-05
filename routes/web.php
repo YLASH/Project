@@ -35,6 +35,7 @@ Route::get('/share/', [NewController::class, 'share']);
 Route::get('/aboutus/', [NewController::class, 'aboutus']);
 Route::get('/contactus', [NewController::class, 'contactus']);
 Route::get('/volunteers', [NewController::class, 'volunteers']);
+Route::get('/cooperate', [NewController::class, 'coop']);
 
 Route::get('/mylist/', [MemberController::class, 'mylist']);
 

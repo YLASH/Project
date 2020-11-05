@@ -38,7 +38,7 @@
                 Account
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2" >
-                  <a class="dropdown-item"  href="#">Profile</a>
+                  <a class="dropdown-item"  href="{{ route('profile.show') }}">Profile</a>
                   <a class="dropdown-item"  href="{{ url('/mylist/') }}">Mylist</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item"  href="{{ url('/logout') }}">logout</a>

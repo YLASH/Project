@@ -118,7 +118,7 @@ background-color:#D7FFEE;">
   <p class="mb-0">Wasting food is never the only choice you can make after closing the store every day.
     Providing food which is near expiration time for free can help unimaginable amount of peolpe and simultaneosly advertise.
   </p>
-  <a class="btn btn-light btn-mid" href="#" role="button" style="float: right">Learn more</a>
+  <a class="btn btn-light btn-mid" href="{{url('/cooperate')}}" role="button" style="float: right">Learn more</a>
 </div> 
 
   

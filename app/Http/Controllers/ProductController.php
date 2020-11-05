@@ -50,7 +50,7 @@ class ProductController extends Controller
       return view('pages.preproducts',compact('username','pname','picktime','pickzip','pickplace','quantity','dscrp','userid'));
       //return $pname;
     }*/
-    
+
     public function upload(Request $request){
       
       $pname =$request->input('pdname');
@@ -71,7 +71,7 @@ class ProductController extends Controller
     public function delete($pid){
       $prodcuts =DB::table('prodcuts')->get();
       echo "Are you going to delete ".$pid ;
-      DB::table('prodcuts')->where('id', '=', $id)->delete();
+      DB::table('prodcuts')->where('id', '=', $pid)->delete();
       return view('pages.mylist',compact('prodcuts'));
     }
     public function editlist($pid) {

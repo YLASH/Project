@@ -58,6 +58,16 @@ class NewController extends Controller
     public function volunteers() {
         return view('pages.volunteers');
     }
+    public function coop() {
+        
+        $username = "Guest";
+        if (Auth::check()) {
+            $user = Auth::user();
+            $username = $user->name;
+        }
+        
+        return view('pages.cooperate', compact('username'));
+    }
 
 
 
