@@ -1,3 +1,9 @@
+@extends('layouts.base')
+@section('title')
+my title
+@endsection
+
+@section('content')
 <x-jet-form-section submit="updateProfileInformation">
     <x-slot name="title">
         {{ __('Profile Information') }}
@@ -77,3 +83,4 @@
         </x-jet-button>
     </x-slot>
 </x-jet-form-section>
+@endsecton

@@ -1,7 +1,14 @@
+@extends('layouts.base')
+@section('title')
+my title
+@endsection
+
+@section('content')
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <!-- <x-jet-authentication-card-logo /> -->
+            <img src='\images\logo.png' width="100">
         </x-slot>
 
         <div x-data="{ recovery: false }">
@@ -55,3 +62,4 @@
         </div>
     </x-jet-authentication-card>
 </x-guest-layout>
+@endsection
