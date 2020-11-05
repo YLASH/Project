@@ -59,7 +59,7 @@ my title
 <div class="alert alert-success col-9" role="alert" style="float: right ;height:200px;background-color:	#FFFFFF;border:none;">
    <h4 class="alert-heading">Statistics</h4>
    <p>Based on the waste information from World Counts, there is a third of the world's food is wasted. </p>
-  <p><iframe title='Tons of food lost or wasted' src='https://www.theworldcounts.com/embed/challenges/101?background_color=#FBFBFF&color=black&font_family=%22Helvetica+Neue%22%2C+Arial%2C+sans-serif&font_size=14' style='border:none;' height='100' width='300' align='left' ></iframe>
+  <p><iframe title='Tons of food lost or wasted' src='https://www.theworldcounts.com/embed/challenges/101?background_color=#FBFBFF&color=black&font_family=%22Helvetica+Neue%22%2C+Arial%2C+sans-serif&font_size=14' style='border:none;' height='4%' width='20%' align='left' ></iframe>
   </p>
   <br>
   <p class="mb-0"></p>
@@ -69,7 +69,7 @@ my title
    <h4 class="alert-heading">Be part of us.</h4>
   <p>Join us to be a volunteer and save food!</p>
   <p class="mb-0">Whenever you want to join, it is never too late to be a food hero.</p>
-  <img src="\images\volunteer.png" style="float:bottom;height:130px;" >
+  <img src="\images\volunteer.png" style="float:bottom;height:30%;" >
   </div>
 <div class="alert alert-info col-3" role="alert" style="float: right ;height:250px;background-color:#E1F1E7;">
    <h4 class="alert-heading">
