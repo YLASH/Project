@@ -10,8 +10,8 @@ my title
         <div class="card-body">
         <img src='/storage/{{$filename}}' art="picture" height="100%" width="" ><br>
         <label for="fotoup">Upload a cute shot of your food</label><!--upload image-->
-         <!--<input type="file" name="fileToUpload" id="fileToUpload">
-           <input type="button" value="Upload Photo" id="fotoup" onclick=""> <a href="{{url('uploadimg')}}">...</a>  -->
+         <input type="file" name="fileToUpload" id="fileToUpload" value="{{$filename}}">
+           <input type="button" value="Upload Photo" id="fotoup" onclick=""> <a href="{{url('uploadimg')}}">...</a>
         <br>
         </div>
     </div>

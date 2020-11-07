@@ -96,10 +96,10 @@
           <a href="/">Home</a>
         </p>
         <p>
-          <a href="contactus">Contactus</a>
+          <a href="{{ url('share') }}">Share</a>
         </p>
         <p>
-          <a href="savefood">Save food</a>
+          <a href="{{ url('savefood') }}">Save food</a>
         </p>
         <p>
         </p>
@@ -114,13 +114,22 @@
         <h6 class="text-uppercase font-weight-bold">Account</h6>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
         <p>
-          <a href="login">Log in</a>
+          @auth
+            <a href="{{ url('profile') }}">My Account</a>
+            @else
+            <a href="{{ url('login') }}">Log in</a>
+          @endif
+          
         </p>
         <p>
-          <a href="register">Register</a>
+          <a href="{{ url('register') }}">Register</a>
         </p>
         <p>
-          <a href="#!">Requested products</a>
+          @auth
+          <a href="{{ url('mylist') }}">Requested products</a>
+          @else
+          <a href="{{ url('login') }}">Requested products</a>
+          @endif
         </p>
         <p>
         </p>
@@ -132,18 +141,18 @@
       <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
 
         <!-- Links -->
-        <h6 class="text-uppercase font-weight-bold">Contact</h6>
+        <h6 class="text-uppercase font-weight-bold"><a href="{{ url('contactus') }}" style="color: inherit;">Contact</a></h6>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
         <p>
-        <img src='\images\place.png' height="" width="15px" '>
+        <img src='\images\place.png' height="" width="15px" >
             <!-- <i class="fas fa-envelope mr-3"></i> -->
           KHH</p>
         <p>
-        <img src='\images\mail.png' height="" width="15px" '>
+        <img src='\images\mail.png' height="" width="15px" >
           <!-- <i class="fas fa-envelope mr-3"></i> -->
            info@example.com</p>
         <p>
-        <img src='\images\phone.png' height="" width="15px" '>
+        <img src='\images\phone.png' height="" width="15px" >
           <!-- <i class="fas fa-phone mr-3"></i>  -->
           + 886 234 567 88</p>
         <p>

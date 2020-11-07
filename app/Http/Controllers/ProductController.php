@@ -59,7 +59,7 @@ class ProductController extends Controller
       $picktime=$request->input('year').'-'.$request->input('month').'-'.$request->input('date').' '.$request->input('hour').':'.$request->input('minute');
       $pickzip=$request->input('zip');
       $pickplace=$request->input('loca');
-      $quantity=$request->input('foodamn');
+      $quantity=$request->input('foodamn');//未完成
       $dscrp=$request->input('dscrp');
       $userid=(Auth::user())->id;
       $username=(Auth::user())->name;

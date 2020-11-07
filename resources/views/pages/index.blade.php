@@ -7,7 +7,8 @@ my title
 @section('content')
 
 <div class="jumbotron" style="background-color:	#C9DECF;">
-  <h1 class="display-4"> Hello, {{$username}} </h1>
+<h2 class="display" style="font-weight:bold;">Do you ever think to make a little bit change to help our environment? </h2>
+  <!--<h3 class="lead" style="font-size:30px ; font-weight:bold;"> Hello, {{$username}} </h3>-->
   <img src="\images\food14.png" width="50">
   <img src="\images\food15.png" width="50">
   <img src="\images\food16.png" width="50">
@@ -15,7 +16,7 @@ my title
   <img src="\images\food18.png" width="50">
   <img src="\images\food19.png" width="50">
   <img src="\images\food20.png" width="50">
-  <p class="lead">Do you ever think to make a little bit change to help our environment? </p>
+ 
   <hr class="my-4" >
   <p style="text-align: right;">This website allows any one who is willing to 
   provide little power helping the environment to have a chance being a food hero.</p>
