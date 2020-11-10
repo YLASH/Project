@@ -14,15 +14,15 @@ my title
       <input class="form-control mr-sm-2" type="search" placeholder="Enter your zip code" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
-      <iframe width="300" height="225" frameborder="0" style="border:0; float:right; " src="https://www.google.com/maps/embed/v1/view?zoom=10&center=22.6351%2C120.3355&key=AIzaSyA1vIgshSL0IKqJbIZf2ZPQEetUIMLgiFY" allowfullscreen></iframe>
+      <!--<iframe width="300" height="225" frameborder="0" style="border:0; float:right; " src="https://www.google.com/maps/embed/v1/view?zoom=10&center=22.6351%2C120.3355&key=AIzaSyA1vIgshSL0IKqJbIZf2ZPQEetUIMLgiFY" allowfullscreen></iframe>-->
     
 </div>
      <!--for 產品列表-->
      
      @forelse ($prodcuts as $prodcut)
     <div class="card" style="width:30%; float:left;margin: 0px 1% 2% 1%; padding-bottom:0;">
-        <img class="card-img-top"src="/storage/{{$prodcut->filename}}" alt="Card image" height="250px" style="width:100%">
-        <p align="right"style="margin:0;">Post-time:{{$postime}}</p>
+    <a class="btn btn-sm" href="/product/{{$prodcut->id}}"><img class="card-img-top"src="/storage/{{$prodcut->filename}}" alt="Card image" height="250px" style="width:100%"></a>
+        <p align="right"style="margin:0;">Post-time:{{$prodcut->created_at}}</p>
         <div class="card-body"  style="padding-top:0;">
         <h5 class="card-title" >{{$prodcut->pname}}</h5>
         <div style="width:75%; float:left;margin-top: 0;">

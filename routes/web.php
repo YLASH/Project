@@ -7,6 +7,7 @@ use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShareController;
 use App\Http\Controllers\UploadImageController;
+use App\Http\Controllers\RequestController;
 
 //use App\Http\Controllers\ShareController;
 
@@ -50,6 +51,7 @@ Route::get('/delete/{pid}/', [ProductController::class, 'delete']);
 Route::get('/edit/{pid}/',[ProductController::class, 'editlist']);
 Route::post('/up/{pid}',[ProductController::class, 'edit']);
 
+Route::get('/requested/{pid}/',[RequestController::class, 'index']);
 
 Route::get('/shows/',[ShareController::class, 'show']);
 

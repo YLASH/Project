@@ -35,14 +35,17 @@ my title
                     <button onclick="askrequest()">Request</button>
                     <script>
                         function askrequest() {
-                        prompt("Your request has been sent~");
-                        }
-                    </script>
+                            var ask = prompt("You want to request this food", "enter數量如果可以數");
+                            window.location.href ="/requested/{{$id}}?ask="+ask;
+                            }
+                    </script><!--可改善-->
+                        
                     @else
                     <button onclick="askrequestx()">Request</button>
                     <script>
                         function askrequestx() {
-                            alert("Please log-in to ask for the request");
+                        alert("Please 登入才能request唷!!!"); 
+                            window.location.href ="/login";
                         }
                     </script>
                     @endif
@@ -60,7 +63,7 @@ my title
    @foreach($randpds as $randpd)
    <div class="card col-3" style="width:30%;float: left;margin:0,1% ,0, 1%;  padding-bottom:0;">
         <a href="/product/{{$randpd->id}}"><img src="/storage/{{$randpd->filename}}" art="picture" height="200px" width="100%" ></a>
-        <p align="right"style="margin:0;"> post-time:12020-10-28 11a.m.</p>
+        <p align="right"style="margin:0;"> post-time:{{$randpd->created_at}}</p>
     </div>
     @endforeach
    

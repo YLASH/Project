@@ -17,7 +17,7 @@ my title
             <ul>
                 <li>PickUp_Time: {{$picktime}}</li>
                 <li>PickUp_Place:{{$pickzip}} - {{$pickplace}}</li>
-                <li>Amount:</li>
+                <li>Amount:{{$quantity}}</li>
                 <li>Post by: {{$username}}</li>
 
             </ul> 

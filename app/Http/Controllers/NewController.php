@@ -26,7 +26,7 @@ class NewController extends Controller
             $user = Auth::user();
             $username = $user->name;
         }
-        $prodcuts =DB::table('prodcuts')->get();
+        $prodcuts =DB::table('prodcuts')->orderby('created_at','desc')->get();
         $pid =DB::table('prodcuts')->value('id');
         $pname =DB::table('prodcuts')->value('pname');
         $picktime =DB::table('prodcuts')->value('picktime');

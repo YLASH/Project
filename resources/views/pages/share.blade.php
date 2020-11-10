@@ -56,7 +56,7 @@ my title
         <input type="tetx" name="loca" placeholder="Collection Point"> <!--insert map--><br>
         Amount:
         <input name="foodamn" type="radio" id="amnfood"><label for="amnfood">Uncountable</label>
-        <input name="foodamn" type="radio" id="unamn"><input type="text" id="unamn" pattern=[0-9]{1,}>
+        <input name="foodamn" type="radio" id="unamn"><input type="text" name="unamn" id="unamn" pattern=[0-9]{1,}>
         <br>
         <label for="fotoup">Upload a cute shot of your food</label><!--upload image-->
         <input type="file" name="fileToUpload" id="fileToUpload">
