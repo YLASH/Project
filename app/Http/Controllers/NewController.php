@@ -50,15 +50,40 @@ class NewController extends Controller
         return view('auth.login', compact('username'));
     }
     public function aboutus() {
-        return view('pages.aboutus');
+        $username = "Guest";
+        if (Auth::check()) {
+            $user = Auth::user();
+            $username = $user->name;
+        }
+        return view('pages.aboutus',compact('username'));
     }
     public function contactus() {
-        return view('pages.contactus');
+        $username = "Guest";
+        if (Auth::check()) {
+            $user = Auth::user();
+            $username = $user->name;
+        }
+        return view('pages.contactus',compact('username'));
     }
     public function volunteers() {
+        $username = "Guest";
+        if (Auth::check()) {
+            $user = Auth::user();
+            $username = $user->name;
+        }
         return view('pages.volunteers');
     }
     public function coop() {
+        
+        /*$username = "Guest";
+        if (Auth::check()) {
+            $user = Auth::user();
+            $username = $user->name;, compact('username')
+        }*/
+        
+        return view('pages.cooperate');
+    }
+    public function main() {
         
         $username = "Guest";
         if (Auth::check()) {
@@ -66,7 +91,7 @@ class NewController extends Controller
             $username = $user->name;
         }
         
-        return view('pages.cooperate', compact('username'));
+        return view('pages.menu', compact('username'));
     }
 
 

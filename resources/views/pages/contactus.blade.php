@@ -30,7 +30,7 @@ Contact Us
             Content:<br> <textarea name="Content"></textarea><br>
             <input type="submit" value="submit"><br><br>
             Or contact us directly:<br>
-            Our email: 12345@gmail.com<br>
+            Our email: savefood2020@gmail.com<br>
             Phone number: 09XXXXXX
         </form>
             

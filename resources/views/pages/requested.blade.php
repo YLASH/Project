@@ -1,6 +1,9 @@
     <script>
-        function askrequestx() {
-                 alert("成功!"); 
-                window.location.href ="/savefood";
-                }
+        window.onload = function askreq() {
+                                            alert("Successful Request!"); 
+                                            window.location.href ="/savefood";
+                                           }
     </script>
+            
+          
+        

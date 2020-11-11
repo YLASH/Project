@@ -40,9 +40,11 @@
               <div class="dropdown">
                 <a class="dropdown-toggle" style="color: inherit;" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Account
-</a>
+                </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2" >
+                  
                   <a class="dropdown-item"  href="{{ route('profile.show') }}">Profile</a>
+                  <a class="dropdown-item"  href="#">Notification</a>
                   <a class="dropdown-item"  href="{{ url('/mylist/') }}">Mylist</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item"  href="{{ url('/logout') }}">logout</a>

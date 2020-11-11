@@ -115,15 +115,11 @@ class ProductController extends Controller
       //return $picktime." <br> " .$year."+" .$month."=".$day." ".$hours.":" .$mins;
       return view('pages.edit', compact('pid','prodcuts','username','pname','picktime','pickzip','pickplace','quantity','dscrp','username','filename','years','months','days','hours','mins','uid'));
       }
+
       public function edit(Request $request,$pid){
-        //$pid =$request->input('pid');
-        //$pname =$request->input('pdname');
+      
         $picktime=$request->input('year').'-'.$request->input('month').'-'.$request->input('date').' '.$request->input('hour').':'.$request->input('minute');
-        //$pickzip=$request->input('zip');
-        //$pickplace=$request->input('loca');
-        //$quantity=$request->input('foodamn');
-        //$dscrp=$request->input('dscrp');
-        //$amu =DB::table('prodcuts')->where('id', '=', $pid)->value('quantity');
+       
         if($request->input('unamn')!= NULL){ //測試
           $amu=$request->input('unamn');
         } else{

@@ -25,10 +25,11 @@ if (Auth::check()) {
     $username = $user->name;
 }
 */
-if (Auth::check()) {
+ $username = "Guest";
+ if (Auth::check()) {
     $user = Auth::user();
     $username = $user->name;
-}
+ }
 Route::get('/', [NewController::class, 'index']);
 Route::get('/logout/', [NewController::class, 'logout']);
 Route::get('/savefood/', [NewController::class, 'savefood']);
@@ -52,6 +53,8 @@ Route::get('/edit/{pid}/',[ProductController::class, 'editlist']);
 Route::post('/up/{pid}',[ProductController::class, 'edit']);
 
 Route::get('/requested/{pid}/',[RequestController::class, 'index']);
+Route::get('mylist/{uid}_{pid}/',[RequestController::class, 'showde']);
+
 
 Route::get('/shows/',[ShareController::class, 'show']);
 

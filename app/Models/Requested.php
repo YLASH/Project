@@ -9,4 +9,12 @@ class Request extends Model
 {
     use HasFactory;
     //hasmany
+    //protected $tabl = 'requests';
+    protected $table = [
+                        'rid',
+                        'pid',
+                        'amount',
+                        'uid',
+                        'status'
+                       ];
 }

@@ -27,7 +27,7 @@ my title
                 <table width='100%' style="table-layout:fixed;">
                 @foreach($prodcuts as $prodcut) 
                    <tr>
-                       <td><img src="/storage/{{$prodcut->filename}}"height="50px" width="50px">{{$prodcut->pname}}</td>
+                       <td><a href="/mylist/{{$userid}}_{{$prodcut->id}}"><img src="/storage/{{$prodcut->filename}}"height="50px" width="50px">{{$prodcut->pname}}</a></td>
                        <td> </td>
                        <td>who sent request</td>
                        <td>user1 , user2 , user3 , ...</td>
