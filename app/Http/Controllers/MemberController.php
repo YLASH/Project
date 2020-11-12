@@ -14,9 +14,13 @@ class MemberController extends Controller
             $username = $user->name;
             $userid =$user->id;
         $prodcuts =DB::table('prodcuts')->where('userid', '=', $userid)->orderby('created_at','desc')->get(); 
-        $r_p =DB::table('requests')->where('uid', '=', $userid)->get();
+        //$r_p =DB::table('requests')->where('uid', '=', $userid)->get();
         $status=DB::table('requests')->where('uid', '=', $userid)->value('status');
-        return view('pages.mylist', compact('username','prodcuts','userid','status','r_p'));
+        $r_ps=DB::table('requests')->join('prodcuts','requests.pid','=','prodcuts.id')
+                                   ->where('requests.uid','=',$userid)
+                                   ->select('requests.*', 'prodcuts.*')
+                                   ->get();
+        return view('pages.mylist', compact('username','prodcuts','userid','status','r_ps'));
         }
         
         return view('auth.login', compact('username'));

@@ -1,7 +1,7 @@
     <script>
         window.onload = function askreq() {
                                             alert("Successful Request!"); 
-                                            window.location.href ="/savefood";
+                                            window.location.href ="/mylist/";
                                            }
     </script>
             

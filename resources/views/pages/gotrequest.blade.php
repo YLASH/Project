@@ -36,17 +36,17 @@ my title
         <div class="card" style="float: right;height:30% ;width:15% ;margin: 0px 1% 2% 0.5%;" height='30%'>
         who will come to pickup:
         <ul>
-           <li></li>
+            @foreach($r_unames as $r_uname)
+             <li>{{$r_uname->name}}</li>
+            @endforeach
+
            <li></li>
            <li></li>
            <li></li>
             .
             <li></li>
            <li></li>
-           <li></li>
-           <li></li>
-           <li></li>
-           <li></li>
+           
            
         </ul>
         </div>
@@ -55,26 +55,20 @@ my title
     <div class="container" style="margin-top:2%">  
    <br>
   <div style="float: left;">
-   <h5>Who ask the request...</h5>
+   <h5>Who sent the request...</h5>
    <hr>
    
-   {{$ruid}}
    <br>
-  
    <input type=hidden value="rid">
    <table>
+        @foreach($r_us as $r_u)
         <tr>
-            @foreach($rts as $rt)
-            <td>requester{{$rt->uid}}:name   status={{$rt->status}}     time:{{$rt->created_at}} </td>
-            @endforeach
+            <td>{{$r_u->name}}   {{$r_u->status}}<button name=status > Requested </button> time:{{$r_u->rcreated_at}}</td>
+
         </tr>
+        @endforeach
     </table>
-   requester_name  
-   if(status=w)<button name=status > Requested </button>  <!--onclick comfirm pass/reject update db狀態 -->
-   else(status=pass)
-   status=reject
    
-   {{$r_u}}
    </div>
     
 </div>

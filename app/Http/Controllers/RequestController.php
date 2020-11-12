@@ -31,7 +31,7 @@ class RequestController extends Controller
             
             $status= 'w';
             $amount= '1';
-           // DB::insert('insert into requests (pid,amount,uid,status) values(?,?,?,?)',[$pid,$amount,$userid,$status]);
+            DB::insert('insert into requests (pid,amount,uid,status) values(?,?,?,?)',[$pid,$amount,$userid,$status]);
             return view('pages.requested');
         }
          // return view('pages.requested',compact('st','c','d','req'));
@@ -66,16 +66,21 @@ class RequestController extends Controller
         $ruid=DB::table('requests')->select()
                                  ->where('pid','=',$pid)
                                  ->get();
-       // $r_u=DB::table('requests','users')->join('requests.uid','=','users.id')
-       //                                   ->where('requests.pid','=',$pid)
-       //                                   ->get();
-
-                            
+        $r_us=DB::table('requests')->join('users','requests.uid','=','users.id')
+                                          ->where('requests.pid','=',$pid)
+                                          ->select('requests.*', 'users.*')
+                                          ->get();
+        $r_unames=DB::table('requests')->join('users','requests.uid','=','users.id')
+                                          ->where([['requests.pid','=',$pid],['requests.status','=','pass']])
+                                          ->select('users.name')
+                                          ->get();
+                      
         
         
       return view('pages.gotrequest', compact('pid','prodcuts','username','pname','picktime',
                                               'pickzip','pickplace','quantity','dscrp',
-                                              'filename','userid','randpds','postime','rts','ruid','r_u'));
+                                              'filename','userid','randpds','postime','rts','ruid',
+                                              'r_us','r_unames'));
      
     }
 }

@@ -18,7 +18,7 @@ my title
         <ul id="menuTabs" class="nav nav-tabs nav-justified">
             <li class="active">
                 <a href="javascript:void(0);" class="menuItem" id="tab_1">Your Items</a></li>
-            <li><a href="javascript:void(0);" class="menuItem" id="tab_2">Your Requesteds</a></li>
+            <li><a href="javascript:void(0);" class="menuItem" id="tab_2">Your Requests</a></li>
         </ul>
         <div class="tab-content">
             <div class="tab-pane active" id="tab_1">
@@ -27,7 +27,7 @@ my title
                 <table width='100%' style="table-layout:fixed;">
                 @foreach($prodcuts as $prodcut) 
                    <tr>
-                       <td><a href="/mylist/{{$userid}}_{{$prodcut->id}}"><img src="/storage/{{$prodcut->filename}}"height="50px" width="50px">{{$prodcut->pname}}</a></td>
+                       <td><a href="/mylist/{{$userid}}_{{$prodcut->id}}"><img src="/storage/{{$prodcut->filename}}"height="60px" width="60px">{{$prodcut->pname}}</a></td>
                        <td> </td>
                        <td>who sent request</td>
                        <td>user1 , user2 , user3 , ...</td>
@@ -42,17 +42,26 @@ my title
             <div class="tab-pane" id="tab_2">
             <div class="container">
                 <h4>Requested</h4>
-        <ul>@foreach($r_p as $r_ps)
-            <li>{{$r_ps->pid}} _ {{$r_ps->status}}</li>
+        <ul>@foreach($r_ps as $r_p)
+            <li><img src="/storage/{{$r_p->filename}}"height="60px" width="60px">
+                {{$r_p->pname}} _ 
+                {{$r_p->status}}
+                @if($r_p->status=='w') 
+                    <button>Wait</button>
+                    @elseif($r_p->status=='pass')
+                    <button>Pass</button>
+                    @else($r_p->status=='reject')
+                    <button>Reject</button>
+                @endif
+                {{$r_p->rcreated_at}}</li>
             @endforeach
-            <li>'ajax requested product <em>, use loop</em>'</li>
-            <li>'ajax requested product <em>, use loop</em>'</li>
-            <li>'ajax requested product <em>, use loop</em>'</li>
-        </ul>
+        </ul>   
         <div id="chat">
                 <ul style="height:20%;border-color:aquamarine"> 
-                <li> <img src="https://diz36nn4q02zr.cloudfront.net/webapi/imagesV3/Original/SalePage/6406391/1/637394070056530000?v=1">
+                <li>  
                 <?php
+                //<img src="https://diz36nn4q02zr.cloudfront.net/webapi/imagesV3/Original/SalePage/6406391/1/637394070056530000?v=1">
+               
                 // $dbhost = 'localhost';
                 // $dbname = 'food';
                 // $dbuser = 'root';
@@ -83,10 +92,11 @@ my title
                 // $itemname = $user['pname'];
                 // }
                 // echo 'user '. $person . ' requested your item '. $itemname .' at '. $coltime . '<br>' .'note:' . $sidenote ;
-                // ?>       
+                //  <button>Da</button> <button>Nah</button> </li>
+                ?>       
 
-                    <button>Da</button> <button>Nah</button> </li>
-                </ul>
+                   
+           
                 </div>
                 
             </div>
