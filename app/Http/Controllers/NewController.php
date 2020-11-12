@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\UploadedImage;
+use phpDocumentor\Reflection\Location;
 
 class NewController extends Controller
 {
@@ -46,8 +47,9 @@ class NewController extends Controller
             $username = $user->name;
         return view('pages.share', compact('username'));
         }
-        
+        // return header('Location: auth.login?redirect=pages.share');
         return view('auth.login', compact('username'));
+        // ? $this->redirectTo : '/share';
     }
     public function aboutus() {
         $username = "Guest";

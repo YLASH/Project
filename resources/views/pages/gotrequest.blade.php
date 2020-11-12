@@ -57,17 +57,24 @@ my title
   <div style="float: left;">
    <h5>Who ask the request...</h5>
    <hr>
-   {{$rt}}
+   
+   {{$ruid}}
    <br>
+  
    <input type=hidden value="rid">
+   <table>
+        <tr>
+            @foreach($rts as $rt)
+            <td>requester{{$rt->uid}}:name   status={{$rt->status}}     time:{{$rt->created_at}} </td>
+            @endforeach
+        </tr>
+    </table>
    requester_name  
    if(status=w)<button name=status > Requested </button>  <!--onclick comfirm pass/reject update db狀態 -->
    else(status=pass)
    status=reject
    
-   foreach( as )
-   who - status -time
-   endforeach
+   {{$r_u}}
    </div>
     
 </div>

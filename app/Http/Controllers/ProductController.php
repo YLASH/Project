@@ -18,12 +18,25 @@ class ProductController extends Controller
         
       $username = "Guest";
       $randpds =DB::table('prodcuts')->inRandomOrder()->limit(4)->get();
-      if (Auth::check()) {
-          $user = Auth::user();
-          $username = $user->name;
-          $uid = $user->id;
-          $randpds =DB::table('prodcuts')->where('userid','!=',$uid)->inRandomOrder()->limit(4)->get(); 
-      }
+      $userid =DB::table('prodcuts')->where('id', '=', $id)->value('userid');
+        if (Auth::check()) {
+            $user = Auth::user();
+            $username = $user->name;
+            $uid = $user->id;
+            $randpds =DB::table('prodcuts')->where('userid','!=',$uid)->inRandomOrder()->limit(4)->get(); 
+            $ruid=DB::table('requests')->select('uid')->where([ ['pid','=',$id],['uid','=',$uid] ])->value('uid');
+            if($uid==$userid){
+              $rt='4';
+            }elseif($ruid!=NULL){
+                $rt='1';//'false';
+            } else{
+                $rt='2';//'ture';
+              }                                
+
+          }else{
+            $rt='3';  
+          }
+      
       $prodcuts =DB::table('prodcuts')->where('id', '=', $id)->get();
       $pname =DB::table('prodcuts')->where('id', '=', $id)->value('pname');
       $picktime =DB::table('prodcuts')->where('id', '=', $id)->value('picktime');
@@ -33,10 +46,11 @@ class ProductController extends Controller
       $dscrp =DB::table('prodcuts')->where('id', '=', $id)->value('description');
       $filename =DB::table('prodcuts')->where('id', '=', $id)->value('filename');
       $postime =DB::table('prodcuts')->where('id', '=', $id)->value('created_at');
-      $userid =DB::table('prodcuts')->where('id', '=', $id)->value('userid');
       $username =DB::table('users')->where('id','=',$userid)->value('name');
-      
-      return view('pages.products', compact('id','prodcuts','username','pname','picktime','pickzip','pickplace','quantity','dscrp','filename','userid','randpds','postime'));
+     
+      return view('pages.products', compact('id','prodcuts','username','pname','picktime','pickzip',
+                                            'pickplace','quantity','dscrp','filename','userid',
+                                            'randpds','postime','rt'));
       
     }
   /*  public function preview(Request $request){

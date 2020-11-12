@@ -24,22 +24,19 @@ class RequestController extends Controller
             $userid = $user->id;
             $uid =DB::table('prodcuts')->where('id', '=', $pid)->value('userid');
             $pname =DB::table('prodcuts')->where('id', '=', $pid)->value('pname');
-                  
-            if($userid == $uid){
-               $r= 'show who going to request';
-            }else{
-                $status= 'w';
-                $amount= '1';
-                //$r='you'.$username. 'want to request this'.$pid . $pname. 'for'.$amount.'&'. $status.'rely'.$ask;
-                //check request 裡這pid uid 有的話要重複加啊
-                DB::insert('insert into requests (pid,amount,uid,status) values(?,?,?,?)',[$pid,$amount,$userid,$status]);
-                return view('pages.requested');
-            }
+
+            $ruid=DB::table('requests')->select('uid')
+                                       ->where('pid','=',$pid)
+                                       ->value('uid');
+            
+            $status= 'w';
+            $amount= '1';
+           // DB::insert('insert into requests (pid,amount,uid,status) values(?,?,?,?)',[$pid,$amount,$userid,$status]);
+            return view('pages.requested');
         }
-        
          // return view('pages.requested',compact('st','c','d','req'));
-      
     }
+
     public function showde($uid,$pid){
           
       $username = "Guest";
@@ -65,11 +62,20 @@ class RequestController extends Controller
         //DB::table('requests')->get( $pid);-->你po的有的有那些request
         //你所有的request
         //request->uid對到的pid->詳細資料
-        $rt=DB::table('requests')->where('pid','=',$pid)->get();
+        $rts=DB::table('requests')->where('pid','=',$pid)->get();
+        $ruid=DB::table('requests')->select()
+                                 ->where('pid','=',$pid)
+                                 ->get();
+       // $r_u=DB::table('requests','users')->join('requests.uid','=','users.id')
+       //                                   ->where('requests.pid','=',$pid)
+       //                                   ->get();
+
+                            
+        
         
       return view('pages.gotrequest', compact('pid','prodcuts','username','pname','picktime',
                                               'pickzip','pickplace','quantity','dscrp',
-                                              'filename','userid','randpds','postime','rt'));
+                                              'filename','userid','randpds','postime','rts','ruid','r_u'));
      
     }
 }

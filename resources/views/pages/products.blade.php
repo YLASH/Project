@@ -30,16 +30,70 @@ my title
                 <br>
                 <br>
                 <button><a href="{{ url('savefood') }}" style="color: inherit;">Back</a></button>
-                @if (Route::has('login'))
+
+                @switch($rt)
+                        @case(1)
+                        <button onclick="askrequests()">Request</button>
+                            <script>
+                                function askrequests() {
+                                alert("你要過這個囉~~"); 
+                                    window.location.href ="/product/{{$id}}";
+                                }
+                            </script>
+                            @break
+                        @case(2)
+                        <button onclick="askrequest()">Request</button>
+                            <script>
+                                function askrequest() {
+                                    var ask = prompt("You want to request this food", "enter數量如果可以數");
+                                      if (ask == null)  { 
+                                          window.alert('awww you have cancelled the request') 
+                                      }else{
+                                          window.location.href ="/requested/{{$id}}?ask="+ask;
+                                      }
+                                    }
+                            </script>         
+                            @break
+                        @case(3)  
+                        <button onclick="askrequestx()">Request</button>
+                            <script>
+                                function askrequestx() {
+                                alert("Please 登入才能request唷!!!"); 
+                                    window.location.href ="/login";
+                                }
+                            </script> 
+                            @break
+                        @case(4)  
+                        <button onclick="askrequslef()">Request</button>
+                            <script>
+                                function askrequslef() {
+                                alert("確認有誰request嗎?"); 
+                                    window.location.href ="/mylist/{{$userid}}_{{$id}}";
+                                }
+                            </script> 
+                            @break    
+                            @default
+                            <span>BBC news - Grimes - Elvis Presley - elvis birthday</span>
+                    @endswitch
+                <!--@if (Route::has('login'))
                    @auth 
-                    <button onclick="askrequest()">Request</button>
-                    <script>
-                        function askrequest() {
-                            var ask = prompt("You want to request this food", "enter數量如果可以數");
-                            window.location.href ="/requested/{{$id}}?ask="+ask;
-                            }
-                    </script><!--可改善-->
-                        
+                        @if($rt=='false')
+                        <button onclick="askrequests()">Request</button>
+                            <script>
+                                function askrequests() {
+                                alert("你要過這個囉~~"); 
+                                    window.location.href ="/product/{{$id}}";
+                                }
+                            </script>
+                        @else
+                            <button onclick="askrequest()">Request</button>
+                            <script>
+                                function askrequest() {
+                                    var ask = prompt("You want to request this food", "enter數量如果可以數");
+                                    window.location.href ="/requested/{{$id}}?ask="+ask;
+                                    }
+                            </script>
+                            @endif   
                     @else
                     <button onclick="askrequestx()">Request</button>
                     <script>
@@ -50,6 +104,7 @@ my title
                     </script>
                     @endif
                 @endif    
+                    -->
         </div>
         </div>
     </div>

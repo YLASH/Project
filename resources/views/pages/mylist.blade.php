@@ -18,7 +18,7 @@ my title
         <ul id="menuTabs" class="nav nav-tabs nav-justified">
             <li class="active">
                 <a href="javascript:void(0);" class="menuItem" id="tab_1">Your Items</a></li>
-            <li><a href="javascript:void(0);" class="menuItem" id="tab_2">Your Requests</a></li>
+            <li><a href="javascript:void(0);" class="menuItem" id="tab_2">Your Requesteds</a></li>
         </ul>
         <div class="tab-content">
             <div class="tab-pane active" id="tab_1">
@@ -42,12 +42,52 @@ my title
             <div class="tab-pane" id="tab_2">
             <div class="container">
                 <h4>Requested</h4>
-        <ul><li>'ajax requested product <em>, use loop</em>'</li>
+        <ul>@foreach($r_p as $r_ps)
+            <li>{{$r_ps->pid}} _ {{$r_ps->status}}</li>
+            @endforeach
             <li>'ajax requested product <em>, use loop</em>'</li>
             <li>'ajax requested product <em>, use loop</em>'</li>
             <li>'ajax requested product <em>, use loop</em>'</li>
         </ul>
-                
+        <div id="chat">
+                <ul style="height:20%;border-color:aquamarine"> 
+                <li> <img src="https://diz36nn4q02zr.cloudfront.net/webapi/imagesV3/Original/SalePage/6406391/1/637394070056530000?v=1">
+                <?php
+                // $dbhost = 'localhost';
+                // $dbname = 'food';
+                // $dbuser = 'root';
+                // $dbpass = '';
+
+                // try{
+                // $dsnpdo= new PDO("mysql:dbhost=$dbhost;dbname=$dbname",$dbuser,$dbpass);
+                // } catch( PDOException $e){
+                // echo $e->getMessage();
+                // }
+
+                // $stmt = $dsnpdo->prepare('SELECT * FROM messages');
+                // $stmt->execute();
+                // $messages = $stmt->fetchAll();
+
+                // foreach ($messages as $user)
+                // {
+                // $person = $user['user'];
+                // $sidenote= $user['message'];
+                // $coltime= $user['dato'];
+                // }
+
+                // $colreq = $dsnpdo->prepare('SELECT * FROM upload');
+                // $colreq->execute();
+                // $upload = $colreq->fetchAll();
+                // foreach ($upload as $user)
+                // {   
+                // $itemname = $user['pname'];
+                // }
+                // echo 'user '. $person . ' requested your item '. $itemname .' at '. $coltime . '<br>' .'note:' . $sidenote ;
+                // ?>       
+
+                    <button>Da</button> <button>Nah</button> </li>
+                </ul>
+                </div>
                 
             </div>
             </div>
