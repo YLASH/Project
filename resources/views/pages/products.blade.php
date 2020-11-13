@@ -16,11 +16,11 @@ my title
         <div class="card-body"style="height:30% ;width:55%">
             <h3>{{$pname}}</h3>
             <ul>
-                <li>Post_Time: {{$postime}}</li>
-                <li>PickUp_Time: {{$picktime}}</li>
-                <li>PickUp_Place:{{$pickzip}} - {{$pickplace}}</li>
-                <li>Amount:{{$quantity}}</li>
-                <li>Post :by {{$username}}</li>
+                <li>Posted at: {{$postime}}</li>
+                <li>Pick up by: {{$picktime}}</li>
+                <li>Collect at:{{$pickzip}} - {{$pickplace}}</li>
+                <li>Amount: {{$quantity}}</li>
+                <li>Shared by {{$username}}</li>
 
             </ul> 
             <hr>

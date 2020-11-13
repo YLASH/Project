@@ -49,11 +49,13 @@ Route::post('/upload', [ProductController::class, 'upload']);
 
 
 Route::get('/delete/{pid}/', [ProductController::class, 'delete']);
-Route::get('/edit/{pid}/',[ProductController::class, 'editlist']);
+//Route::get('/edit/{pid}/',[ProductController::class, 'editlist']);
 Route::post('/up/{pid}',[ProductController::class, 'edit']);
 
 Route::get('/requested/{pid}/',[RequestController::class, 'index']);
-Route::get('mylist/{uid}_{pid}/',[RequestController::class, 'showde']);
+Route::post('/response/{rid}/',[RequestController::class, 'response']);
+Route::get('/mylist/{uid}_{pid}/',[RequestController::class, 'showde']);
+Route::get('/mylist/{uid}_{pid}/edit/',[ProductController::class, 'editlist']);
 
 
 Route::get('/shows/',[ShareController::class, 'show']);

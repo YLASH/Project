@@ -57,6 +57,7 @@ class RequestController extends Controller
       $filename =DB::table('prodcuts')->where('id', '=', $pid)->value('filename');
       $postime =DB::table('prodcuts')->where('id', '=', $pid)->value('created_at');
       $userid =DB::table('prodcuts')->where('id', '=', $pid)->value('userid');
+      $pstatus =DB::table('prodcuts')->where('id', '=', $pid)->value('pstatus');
       $username =DB::table('users')->where('id','=',$userid)->value('name');
         //Prodcuts::pid ->where('id', '=', $uid)
         //DB::table('requests')->get( $pid);-->你po的有的有那些request
@@ -71,16 +72,34 @@ class RequestController extends Controller
                                           ->select('requests.*', 'users.*')
                                           ->get();
         $r_unames=DB::table('requests')->join('users','requests.uid','=','users.id')
-                                          ->where([['requests.pid','=',$pid],['requests.status','=','pass']])
+                                          ->where([['requests.pid','=',$pid],['requests.status','=','accept']])
                                           ->select('users.name')
                                           ->get();
                       
         
         
-      return view('pages.gotrequest', compact('pid','prodcuts','username','pname','picktime',
+      return view('pages.item', compact('uid','pid','prodcuts','username','pname','picktime',
                                               'pickzip','pickplace','quantity','dscrp',
                                               'filename','userid','randpds','postime','rts','ruid',
-                                              'r_us','r_unames'));
+                                              'r_us','r_unames','pstatus'));
      
     }
+
+    public function response(Request $request,$rid){
+        if (Auth::check()) {
+            $user = Auth::user();
+            $username = $user->name;
+            $uid = $user->id;
+            $uid =  $uid.'_';
+        $pid=DB::table('requests')->where('rid','=',$rid)->value('pid');    
+        DB::table('requests')
+                 ->where('rid', '=', $rid)
+                 ->update(['status'=> $request->status]);
+
+        return redirect("/mylist/$uid$pid");
+         }
+         // return view('pages.item');
+      }
+
+
 }

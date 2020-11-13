@@ -86,7 +86,10 @@ class ProductController extends Controller
       $username=(Auth::user())->name;
       $path = $request->file('fileToUpload')->store('public');
       $filename =basename($path);
-      DB::insert('insert into prodcuts (pname,picktime,pickzip,pickplace,quantity,description,filename,userid) values(?,?,?,?,?,?,?,?)',[$pname,$picktime,$pickzip,$pickplace,$quantity,$dscrp,$filename,$userid]);
+      $pstatus='show';
+      DB::insert('insert into prodcuts (pname,picktime,pickzip,pickplace,quantity,description,filename,userid,pstatus) values(?,?,?,?,?,?,?,?,?)',
+                                       [$pname,$picktime,$pickzip,$pickplace,$quantity,$dscrp,$filename,$userid, $pstatus]);
+      
       return view('pages.preproducts',compact('username','pname','picktime','pickzip','pickplace','quantity','dscrp','userid','filename'));
     
     }
@@ -98,7 +101,7 @@ class ProductController extends Controller
       DB::table('prodcuts')->where('id', '=', $pid)->delete();
       return view('pages.mylist',compact('prodcuts'));
     }
-    public function editlist($pid) {
+    public function editlist($uid,$pid) {
         
       $username = "Guest";
       if (Auth::check()) {
@@ -108,15 +111,15 @@ class ProductController extends Controller
       $prodcuts =DB::table('prodcuts')->where('id', '=', $pid)->get();
       $pname =DB::table('prodcuts')->where('id', '=', $pid)->value('pname');
       $picktime =DB::table('prodcuts')->where('id', '=', $pid)->value('picktime');
-      $ptime= explode('-', $picktime);
-      $years=$ptime[0];  $months=$ptime[1];
-      $dayy=$ptime[2];
-      $dayy=explode(' ',$dayy);
-      $days=$dayy[0];
-      $ttime=$dayy[1];
-      $ttime=explode(':',$ttime);
-      $hours=$ttime[0];
-      $mins=$ttime[1];
+     // $ptime= explode('-', $picktime);
+     // $years=$ptime[0];  $months=$ptime[1];
+     // $dayy=$ptime[2];
+     // $dayy=explode(' ',$dayy);
+     // $days=$dayy[0];
+     // $ttime=$dayy[1];
+     // $ttime=explode(':',$ttime);
+     // $hours=$ttime[0];
+     // $mins=$ttime[1];
 
       $pickzip =DB::table('prodcuts')->where('id', '=', $pid)->value('pickzip');
       $pickplace =DB::table('prodcuts')->where('id', '=', $pid)->value('pickplace');
@@ -127,7 +130,9 @@ class ProductController extends Controller
       $username =DB::table('users')->where('id','=',$uid)->value('name');
       
       //return $picktime." <br> " .$year."+" .$month."=".$day." ".$hours.":" .$mins;
-      return view('pages.edit', compact('pid','prodcuts','username','pname','picktime','pickzip','pickplace','quantity','dscrp','username','filename','years','months','days','hours','mins','uid'));
+      return view('pages.edit', compact('pid','prodcuts','username','pname','picktime',
+                                        'pickzip','pickplace','quantity','dscrp','username',
+                                        'filename','uid'));
       }
 
       public function edit(Request $request,$pid){
@@ -152,23 +157,25 @@ class ProductController extends Controller
         }
         
         $userid =$request->input('userid');
+        $uid =$userid.'_';
        $data =DB::table('prodcuts')
                  ->where('id', '=', $pid)
                  ->update(['pname'=> $request->pdname,
-                           'picktime'=>$picktime,
+                           'picktime'=>$request->pktime,
                            'pickzip'=>$request->zip,
                            'pickplace'=>$request->loca,
                            'quantity'=>$quantity,
                            'description'=>$request->dscrp,
                            'filename' =>$filename,
-                           'userid' =>$userid
+                           'userid' =>$userid,
+                           'pstatus' =>$request->pstatus
                            ]);
            
         
         //DB::table('prodcuts')->where('id', '=', $pid)->update(['pickplace'=>$pickplace]);
         //DB::Update('insert into prodcuts (pname,picktime,pickzip,pickplace,quantity,description,filename,userid) values(?,?,?,?,?,?,?,?)',[$pname,$picktime,$pickzip,$pickplace,$quantity,$dscrp,$filename,$userid]);
         $request->session()->flash('status2', 'Success!'); //待修改alert
-        return redirect("/edit/$pid");
+        return redirect("/mylist/$uid$pid");
         //return $
       }
     

@@ -10,7 +10,7 @@ my title
 
 
 <main>
-    <div>
+    <div style="margin:0 auto;right:20px;left:20px;">
         <form id="stuff" action="/upload/" method="post" enctype="multipart/form-data">
         @csrf
         <label for="pdname">What is it you're sharing today?</label>
@@ -52,7 +52,7 @@ my title
         {echo "<option value=".$i.">".$i."</option>";}
         ?> </select><br> 
         At
-        <input type="tetx"name="zip" id="zip">
+        <input type="tetx"name="zip" placeholder="Postcode" id="zip">
         <input type="tetx" name="loca" placeholder="Collection Point"> <!--insert map--><br>
         Amount:
         <input name="foodamn" type="radio" id="amnfood"><label for="amnfood">Uncountable</label>
@@ -63,7 +63,7 @@ my title
         <!--<input type="button" value="Upload Photo" id="fotoup" onclick=""> <a href="{{url('uploadimg')}}">...</a>  -->
         <br>
         <label for="dscrp">Tell us more about it</label>
-        <input id="dscrp" name="dscrp" type="text" placeholder="write description">
+        <input style="height:20%;width:30%;overflow:scroll;" id="dscrp" name="dscrp" type="text" placeholder="Anything people should know about ?">
         <br>
         
         <input type="submit" name="submitFood" value="POST!!!">
@@ -75,7 +75,7 @@ my title
         <!--<button name="prevuFood"><a href="{url('preproduct')}">PREVIEW!!!</a></button>-->
     </div> 
 </main>
-
+<!-- php cant be null function  -->
 @endsection
 
 

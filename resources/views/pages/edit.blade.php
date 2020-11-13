@@ -30,48 +30,18 @@ my title
             @csrf
             <div >
             <input type="text"  id="pdname" name="pdname" placeholder="Insert Product Name"  value="{{$pname}}"><br>
+            <select id=pstatus name="pstatus" required>
+                    <option value="show">公開</option>
+                    <option value="hide">隱藏</option>
+            </select> 
             <input type="hidden" id="pid" name="pid" value="{{$pid}}">
             <ul>
-            <li>Post_Time: </li>
-            <li>PickUp_Time:{{$picktime}}
-                <select id=collectinfo name="date" value="{{$days}}" required>
-                    <?php 
-                    for($i=1; $i<=31; $i++)
-                    {echo "<option value=".$i.">".$i."</option>";}
-                    ?> </select> 
-                    <select name="month" id="month" value="{{$months}}" required>
-                    <option value="1">January</option>
-                    <option value="2">February</option>
-                    <option value="3">March</option>
-                    <option value="4">April</option>
-                    <option value="5">May</option>
-                    <option value="6">June</option>
-                    <option value="7">July</option>
-                    <option value="8">August</option>
-                    <option value="9">September</option>
-                    <option value="10">October</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
-                    </select>
-                    <select name="year" value="{{$years}}" required>
-                    <?php 
-                    for($i=2020; $i<=2022; $i++)
-                    {echo "<option value=".$i.">".$i."</option>";}
-                    ?> </select> 
-                    <select name="hour" value="{{$hours}}" required>
-                    <?php 
-                    for($i=00; $i<=24; $i++)
-                    {echo "<option value=".$i.">".$i."</option>";}
-                    ?> </select> 
-                    :
-                    <select name="minute" value="{{$mins}}" required>
-                    <?php 
-                    for($i=00; $i<=59; $i++)
-                    {echo "<option value=".$i.">".$i."</option>";}
-                    ?> </select><br>
+            <li>Posted at: </li>
+            <li>Pick up by:
+            <input type="text"  id="pktime" name="pktime" placeholder="Insert YYYY/MM/DD hh:mm"  value="{{$picktime}}"><br>
             </li>
             <li>
-            PickUp_Place: <input type="tetx"name="zip" id="zip" value="{{$pickzip}}">
+            Collect at: <input type="tetx"name="zip" id="zip" value="{{$pickzip}}">
                           <input type="tetx" name="loca" placeholder="Collection Point" value="{{$pickplace}}"> <!--insert map--><br>
             </li>
             @if($quantity === 'uncountable')
@@ -87,7 +57,7 @@ my title
                         <br>
             </li>
             @endif
-            <li>Post :by {{$username}}</li>
+            <li>Shared by {{$username}}</li>
             <input type="hidden" id="uesrid" name="userid" value="{{$uid}}">
             </ul>
             <hr>
@@ -95,7 +65,9 @@ my title
             
             <input id="dscrp" name="dscrp" type="text" placeholder="write description" value="{{$dscrp}}">
             <br>
-            <button><a herf="{{url('mylist')}}"></a></button>
+            <input type=submit value="submit">
+            
+            <button style="color: inherit;"><a href="/mylist/{{$uid}}_{{$pid}}">Back</a></button>
  
             </form>
             </div>

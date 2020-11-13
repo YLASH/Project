@@ -7,7 +7,7 @@ my title
 @section('content')
 
 <div class="jumbotron" style="background-color:	#C9DECF;">
-<h2 class="display" style="font-weight:bold;">Do you ever think to make a little bit change to help our environment? </h2>
+<h2 class="display" style="font-weight:bold;">Ever think of helping our environment a wee bit by eating? </h2>
   <!--<h3 class="lead" style="font-size:30px ; font-weight:bold;"> Hello, {{$username}} </h3>-->
   <img src="\images\food14.png" width="50">
   <img src="\images\food15.png" width="50">
@@ -18,8 +18,7 @@ my title
   <img src="\images\food20.png" width="50">
  
   <hr class="my-4" >
-  <p style="text-align: right;">This website allows any one who is willing to 
-  provide little power helping the environment to have a chance being a food hero.</p>
+  <p style="text-align: right;">On here anyone has a chance to be a hero by providing a little to the community </p>
   <a class="btn btn-primary btn-lg" href="{{ url('register') }}" role="button" style="float: right">Join US!!</a>
 </div>
 
@@ -59,7 +58,7 @@ my title
   
 <div class="alert alert-success col-6" role="alert" style="float: left ;height:200px;background-color:	#FFFFFF;border:none;">
    <h4 class="alert-heading">Statistics</h4>
-   <p>Based on the waste information from World Counts, there is a third of the world's food is wasted. </p>
+   <p>According to World Counts, one third of the food produced on our planet goes straight in to the bins. </p>
   
  </div>  
  <div class="alert alert-success col-3" role="alert" style="float: right ;height:200px;background-color:	#FFFFFF;border:none;">
@@ -70,7 +69,7 @@ my title
 
 <div class="alert alert-info col-9" role="alert" style="float: left;height:250px;background-color:#E1F1E7;">
    <h4 class="alert-heading">Be part of us.</h4>
-  <p>Join us to be a volunteer and save food!</p>
+  <p>Join us as a volunteer and save all the lonely food!</p>
   <p class="mb-0">Whenever you want to join, it is never too late to be a food hero.</p>
   <img src="\images\volunteer.png" style="float:bottom;height:30%;" >
   </div>
@@ -115,11 +114,11 @@ background-color:#D7FFEE;">
 
 
 <div class="alert alert-success col-9" role="alert" height="500px" " width="100%" style="float: right ;background-color:#FFFFFF;height:250px;border:none;">
-  <h4 class="alert-heading">Cooperative Store</h4>
+  <h4 class="alert-heading">Partners</h4>
   <p>H2O Hotel</p>
   <hr>
-  <p class="mb-0">Wasting food is never the only choice you can make after closing the store every day.
-    Providing food which is near expiration time for free can help unimaginable amount of peolpe and simultaneosly advertise.
+  <p class="mb-0">Throwing everything away should not be your daily routine.
+    By donating surplus products of your business, you can help an unimaginable amount of peolpe in need and tell more people about your stories.
   </p>
   <a class="btn btn-light btn-mid" href="{{url('/cooperate')}}" role="button" style="float: right">Learn more</a>
 </div> 
