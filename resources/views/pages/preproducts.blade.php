@@ -15,10 +15,10 @@ my title
         <div class="card-body"style="height:30% ;width:55%">
             <h3>{{$pname}}</h3>
             <ul>
-                <li>PickUp_Time: {{$picktime}}</li>
-                <li>PickUp_Place:{{$pickzip}} - {{$pickplace}}</li>
-                <li>Amount:{{$quantity}}</li>
-                <li>Post by: {{$username}}</li>
+                <li>Pick Up Time: {{$picktime}}</li>
+                <li>Pick Up Location: {{$pickzip}} - {{$pickplace}}</li>
+                <li>Amount: {{$quantity}}</li>
+                <li>Posted by: {{$username}}</li>
 
             </ul> 
             <hr>
@@ -32,8 +32,8 @@ my title
     </div>
     <div>
     <center>
-   
-    <button name="backshare"><a href="{{url('savefood')}}">back</a></button>
+    <button name="edit"><a href="/mylist/{{$userid}}_{{$pid}}/edit">back</a></button>
+    <button name="backsave"><a href="{{url('savefood')}}">back</a></button>
     </center>
     </div>
     

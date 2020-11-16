@@ -18,7 +18,11 @@ Join us !be Volunteer!!
     <li>Reply the request from requesters in time.</li>
     <li>Wait for requesters to get their products.</li>
     <li>After all requesters finish the pick-up, your mission will be done.</li>
+    <li>Then contact us.</li>
 </ul>
+   
+   
+
 </p>
 
 

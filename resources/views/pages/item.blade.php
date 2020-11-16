@@ -20,7 +20,7 @@ my title
         <div class="card-body"style="height:30% ;width:80%">
             <h3>{{$pname}}</h3>
             <ul>
-                <li >Status:<b>{{$pstatus}}</b></li>
+                <li >Status: <b>{{$pstatus}}</b></li>
                 <li>Posted at: {{$postime}}</li>
                 <li>Pick up by: {{$picktime}}</li>
                 <li>Collect at:{{$pickzip}} - {{$pickplace}}</li>

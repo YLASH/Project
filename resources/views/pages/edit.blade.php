@@ -5,11 +5,11 @@ my title
 @endsection
 
 @section('content')
-        @if (session('status2'))
+        <!-- @if (session('status2'))
             <div class="alert alert-success"> {{ session('status2') }} </div>
         @elseif(session('status1'))
             <div class="alert alert-danger"> {{ session('status1') }} </div>
-        @endif
+        @endif -->
 <div>
     <div class="card" style="float: left; height:30%; width:40%;margin: 0px 1% 2% 1%;"> 
         <div class="card-body">

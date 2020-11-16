@@ -73,7 +73,7 @@ my title
                             </script> 
                             @break    
                             @default
-                            <span>BBC news - Grimes - Elvis Presley - elvis birthday</span>
+                            <span>request?</span>
                     @endswitch
                 <!--@if (Route::has('login'))
                    @auth 
@@ -108,21 +108,21 @@ my title
         </div>
         </div>
     </div>
- 
-<div class="container" style="margin-top:5%">  
-   <br>
-   <br>
-   
-   <h5>你可能有興趣...</h5>
-   <hr>
-   @foreach($randpds as $randpd)
-   <div class="card col-3" style="width:30%;float: left;margin:0,1% ,0, 1%;  padding-bottom:0;">
-        <a href="/product/{{$randpd->id}}"><img src="/storage/{{$randpd->filename}}" art="picture" height="200px" width="100%" ></a>
-        <p align="right"style="margin:0;"> post-time:{{$randpd->created_at}}</p>
-    </div>
-    @endforeach
-   
     
-</div>
+    <div class="container" style="margin-top:5%">  
+    <br>
+    <br>
+    
+    <h5>你可能有興趣...</h5>
+    <hr>
+    @foreach($randpds as $randpd)
+    <div class="card col-3" style="width:30%;float: left;margin:0,1% ,0, 1%;  padding-bottom:0;">
+            <a href="/product/{{$randpd->id}}"><img src="/storage/{{$randpd->filename}}" art="picture" height="200px" width="100%" ></a>
+            <p align="right"style="margin:0;"> post-time:{{$randpd->created_at}}</p>
+        </div>
+        @endforeach
+    
+        
+    </div>
     
 @endsection

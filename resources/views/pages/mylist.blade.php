@@ -25,7 +25,7 @@ my title
         <ul id="menuTabs" class="nav nav-tabs ">
             <!-- <li class="active"> -->
             <li class="nav-item">
-                <a class="nav-link active" href="javascript:void(0);" class="menuItem" id="tab_2">Your Requesteds</a>
+                <a class="nav-link active" href="javascript:void(0);" class="menuItem" id="tab_2">Your Requestss</a>
             </li>
             <li>
                 <a class="nav-link active" href="javascript:void(0);" class="menuItem" id="tab_1">Your Items</a>
@@ -33,61 +33,66 @@ my title
             <li class="nav-item">
           </li>
         </ul>
+
         <div class="tab-content">
             <div class="tab-pane " id="tab_1">
             <div class="container">
                 <h4>Shared</h4>
                 <table class="table table-hover">
-                @foreach($prodcuts as $prodcut) 
-                  @if($prodcut->pstatus =='hide')
-                    <tr class="table-secondary">
+                  @foreach($prodcuts as $prodcut) 
+                    @if($prodcut->pstatus =='hide')
+                        <tr class="table-secondary">
+                            <td><a href="/mylist/{{$userid}}_{{$prodcut->id}}"><img src="/storage/{{$prodcut->filename}}"height="60px" width="60px">{{$prodcut->pname}}</a></td>
+                            <td> </td>
+                            
+                            <td>{{$prodcut->created_at}} </td>
+                            <td>{{$prodcut->pstatus}} </td>
+                            <!--<td><a href='edit/{{$prodcut->id}}' style="color: inherit;"><center>Edit</center></a></td>-->
+                            <td><a href='/#delete/{{$prodcut->id}}/' style="color: inherit;"><center>Delete</center></a></td>
+                            </tr>
+                    @else
+                        <tr>
                         <td><a href="/mylist/{{$userid}}_{{$prodcut->id}}"><img src="/storage/{{$prodcut->filename}}"height="60px" width="60px">{{$prodcut->pname}}</a></td>
                         <td> </td>
                         
                         <td>{{$prodcut->created_at}} </td>
                         <td>{{$prodcut->pstatus}} </td>
                         <!--<td><a href='edit/{{$prodcut->id}}' style="color: inherit;"><center>Edit</center></a></td>-->
-                        <td><a href='/#delete/{{$prodcut->id}}/' style="color: inherit;"><center>Delete</center></a></td>
+                        <td><a href='/delete/{{$prodcut->id}}/' style="color: inherit;"><center>Delete</center></a></td>
                         </tr>
-                   @else
-                    <tr>
-                       <td><a href="/mylist/{{$userid}}_{{$prodcut->id}}"><img src="/storage/{{$prodcut->filename}}"height="60px" width="60px">{{$prodcut->pname}}</a></td>
-                       <td> </td>
-                       
-                       <td>{{$prodcut->created_at}} </td>
-                       <td>{{$prodcut->pstatus}} </td>
-                       <!--<td><a href='edit/{{$prodcut->id}}' style="color: inherit;"><center>Edit</center></a></td>-->
-                       <td><a href='/#delete/{{$prodcut->id}}/' style="color: inherit;"><center>Delete</center></a></td>
-                    </tr>
-                  @endif
-                  
-               @endforeach 
+                    @endif
+                    
+                  @endforeach 
                </table> 
             </div>
             </div>
             <div class="tab-pane active" id="tab_2">
             <div class="container">
                 <h4>Requested</h4>
-                <table class="table table-hover">
-         @foreach($r_ps as $r_p)
-            <tr> 
-                <td><img src="/storage/{{$r_p->filename}}"height="60px" width="60px">
-                    {{$r_p->pname}} 
-                    
-                    @if($r_p->status=='w') 
-                    <span class="badge badge-info">Await Response...</span>
-                        @elseif($r_p->status=='accept')
-                        <span class="badge badge-pill badge-warning"><em>Don't forget to collect them!</em></span>
-                        
-                        @else($r_p->status=='reject')
-                        <span class="badge badge-pill badge-dark"><em>Sorry you were rejected</em></span>
-                    @endif
-                    {{$r_p->rcreated_at}}
-                </td>  
-            </tr> 
-            @endforeach
-        
+                <table class="table table-hover" width="100%" style="table-layout:fixed">
+                    @foreach($r_ps as $r_p)
+                    <tr> 
+                        <td><img src="/storage/{{$r_p->filename}}"height="60px" width="60px">
+                            {{$r_p->pname}} 
+                        </td>
+                        <td style="vertical-align:middle; text-align:center;">    
+                            @if($r_p->status=='w') 
+                            <span class="badge badge-info">Await Response...</span>
+                                @elseif($r_p->status=='accept')
+                                <span class="badge badge-pill badge-warning"><em>Don't forget to collect them!</em></span>
+                                
+                                @else($r_p->status=='reject')
+                                <span class="badge badge-pill badge-dark"><em>Sorry you were rejected</em></span>
+                            @endif
+                        </td>
+                        <td style="text-align:right;">    
+                            {{$r_p->rcreated_at}}
+                        </td>  
+                    </tr> 
+                    @endforeach
+                
                 </table>
+                
         <div id="chat">
                 <ul style="height:20%;border-color:aquamarine"> 
                 <li>  

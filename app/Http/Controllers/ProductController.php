@@ -70,7 +70,8 @@ class ProductController extends Controller
     public function upload(Request $request){
       
       $pname =$request->input('pdname');
-      $picktime=$request->input('year').'-'.$request->input('month').'-'.$request->input('date').' '.$request->input('hour').':'.$request->input('minute');
+      $picktime=$request->input('colBy');
+    // year').'-'.$request->input('month').'-'.$request->input('date').' '.$request->input('hour').':'.$request->input('minute');
       $pickzip=$request->input('zip');
       $pickplace=$request->input('loca');
       
@@ -89,8 +90,8 @@ class ProductController extends Controller
       $pstatus='show';
       DB::insert('insert into prodcuts (pname,picktime,pickzip,pickplace,quantity,description,filename,userid,pstatus) values(?,?,?,?,?,?,?,?,?)',
                                        [$pname,$picktime,$pickzip,$pickplace,$quantity,$dscrp,$filename,$userid, $pstatus]);
-      
-      return view('pages.preproducts',compact('username','pname','picktime','pickzip','pickplace','quantity','dscrp','userid','filename'));
+      $pid=DB::table('prodcuts')->where('filename', '=', $filename)->value('id');
+      return view('pages.preproducts',compact('username','pname','picktime','pickzip','pickplace','quantity','dscrp','userid','filename','pid'));
     
     }
    
@@ -174,7 +175,7 @@ class ProductController extends Controller
         
         //DB::table('prodcuts')->where('id', '=', $pid)->update(['pickplace'=>$pickplace]);
         //DB::Update('insert into prodcuts (pname,picktime,pickzip,pickplace,quantity,description,filename,userid) values(?,?,?,?,?,?,?,?)',[$pname,$picktime,$pickzip,$pickplace,$quantity,$dscrp,$filename,$userid]);
-        $request->session()->flash('status2', 'Success!'); //待修改alert
+       // $request->session()->flash('status2', 'Success!'); //待修改alert
         return redirect("/mylist/$uid$pid");
         //return $
       }
