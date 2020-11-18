@@ -3,19 +3,20 @@
 @section('title')
 my title
 @endsection
+<link rel="stylesheet" href="{{ asset('css/index.css') }}">
 
 @section('content')
-
-<div class="jumbotron" style="background-color:	#C9DECF;">
-<h2 class="display" style="font-weight:bold;">Ever think of helping our environment a wee bit by eating? </h2>
+<body></body>
+<div class="jumbotron" id='indx'>
+<h2 class="display" >Ever think of helping our environment a wee bit by eating? </h2>
   <!--<h3 class="lead" style="font-size:30px ; font-weight:bold;"> Hello, {{$username}} </h3>-->
-  <img src="\images\food14.png" width="50">
-  <img src="\images\food15.png" width="50">
-  <img src="\images\food16.png" width="50">
-  <img src="\images\food17.png" width="50">
-  <img src="\images\food18.png" width="50">
-  <img src="\images\food19.png" width="50">
-  <img src="\images\food20.png" width="50">
+  <img src="\images\food14.png" >
+  <img src="\images\food15.png" >
+  <img src="\images\food16.png" >
+  <img src="\images\food17.png" >
+  <img src="\images\food18.png" >
+  <img src="\images\food19.png" >
+  <img src="\images\food20.png">
  
   <hr class="my-4" >
   <p style="text-align: right;">On here anyone has a chance to be a hero by providing a little to the community </p>
@@ -56,7 +57,7 @@ my title
 </div>
   
   
-<div class="alert alert-success col-6" role="alert" style="float: left ;height:200px;background-color:	#FFFFFF;border:none;">
+<div class="alert alert-success col-6" role="alert" style="float: left ;height:200px;background-color:	#FFFFFF;border:none;overflow:auto;">
    <h4 class="alert-heading">Statistics</h4>
    <p>According to World Counts, one third of the food produced on our planet goes straight in to the bins. </p>
   
@@ -67,15 +68,15 @@ my title
   
  </div>  
 
-<div class="alert alert-info col-9" role="alert" style="float: left;height:250px;background-color:#E1F1E7;">
+<div class="alert alert-info col-9" role="alert" style="float: left;height:250px;background-color:#E1F1E7;overflow:auto;">
    <h4 class="alert-heading">Be part of us.</h4>
   <p>Join us as a volunteer and save all the lonely food!</p>
   <p class="mb-0">Whenever you want to join, it is never too late to be a food hero.</p>
-  <img src="\images\volunteer.png" style="float:bottom;height:30%;" >
+  
   </div>
 <div class="alert alert-info col-3" role="alert" style="float: right ;height:250px;background-color:#E1F1E7;">
    <h4 class="alert-heading">
-   <img src='\images\earth2.png' art="picture" height="" width="90%" >
+   <img src='\images\earth2.png' art="picture" height="" width="90%" ><img src="\images\volunteer.png" style="float:bottom;height:30%;" >
   </h4>
 </div> 
 
@@ -113,18 +114,18 @@ background-color:#D7FFEE;">
 </div>
 
 
-<div class="alert alert-success col-9" role="alert" height="500px" " width="100%" style="float: right ;background-color:#FFFFFF;height:250px;border:none;">
+<div class="alert alert-success col-9" role="alert" height="500px" " width="100%" style="float: right ;background-color:#FFFFFF;height:250px;border:none;overflow:auto;">
   <h4 class="alert-heading">Partners</h4>
-  <p>H2O Hotel</p>
+  <p>Cat Fish Cafe</p>
   <hr>
-  <p class="mb-0">Throwing everything away should not be your daily routine.
+  <p class="mb-0" style="overflow:auto;">Throwing everything away should not be your daily routine.
     By donating surplus products of your business, you can help an unimaginable amount of peolpe in need and tell more people about your stories.
   </p>
   <a class="btn btn-light btn-mid" href="{{url('/cooperate')}}" role="button" style="float: right">Learn more</a>
 </div> 
 
   
-<br>
+<br></body>
 <br>
 
 

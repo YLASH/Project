@@ -1,4 +1,15 @@
 
+<style> 
+footer p {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 13.87;
+}
+footer img {
+ max-height: 30px;
+ width: auto;
+}
+</style>
+
 <div class="card col-12"  style="border:none; background-color:	#FFFFFF;" >
   <div class="card-header" style="border:none; background-color:	#FFFFFF;">
   
@@ -116,7 +127,7 @@
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
         <p>
           @auth
-            <a href="{{ url('profile') }}">My Account</a>
+            <a href="{{ url('user/profile') }}">My Account</a>
             @else
             <a href="{{ url('login') }}">Log in</a>
           @endif
@@ -129,7 +140,7 @@
           @auth
           <a href="{{ url('mylist') }}">Requested products</a>
           @else
-          <a href="{{ url('login') }}">Requested products</a>
+          <a href="{{ url('aboutus') }}">Abouts Us</a>
           @endif
         </p>
         <p>
@@ -147,7 +158,7 @@
         <p>
         <img src='\images\place.png' height="" width="15px" >
             <!-- <i class="fas fa-envelope mr-3"></i> -->
-          KHH</p>
+          Takao, Formosa</p>
         <p>
         <img src='\images\mail.png' height="" width="15px" >
           <!-- <i class="fas fa-envelope mr-3"></i> -->
@@ -169,7 +180,7 @@
 
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    Savefood
+    Food Saviour
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Prodcuts;
+use App\Models\Products;
 use App\Models\Request as ModelsRequest;
 use App\Models\Requested;
 use Illuminate\Support\Facades\Auth;
@@ -22,8 +22,8 @@ class RequestController extends Controller
             $user = Auth::user();
             $username = $user->name;
             $userid = $user->id;
-            $uid =DB::table('prodcuts')->where('id', '=', $pid)->value('userid');
-            $pname =DB::table('prodcuts')->where('id', '=', $pid)->value('pname');
+            $uid =DB::table('products')->where('pid', '=', $pid)->value('userid');
+            $pname =DB::table('products')->where('pid', '=', $pid)->value('pname');
 
             $ruid=DB::table('requests')->select('uid')
                                        ->where('pid','=',$pid)
@@ -40,26 +40,26 @@ class RequestController extends Controller
     public function showde($uid,$pid){
           
       $username = "Guest";
-      $randpds =DB::table('prodcuts')->inRandomOrder()->limit(4)->get();
+      $randpds =DB::table('products')->inRandomOrder()->limit(4)->get();
       if (Auth::check()) {
           $user = Auth::user();
           $username = $user->name;
           $uid = $user->id;
-          $randpds =DB::table('prodcuts')->where('userid','!=',$uid)->inRandomOrder()->limit(4)->get(); 
+          $randpds =DB::table('products')->where('userid','!=',$uid)->inRandomOrder()->limit(4)->get(); 
       }
-      $prodcuts =DB::table('prodcuts')->where('id', '=', $pid)->get();
-      $pname =DB::table('prodcuts')->where('id', '=', $pid)->value('pname');
-      $picktime =DB::table('prodcuts')->where('id', '=', $pid)->value('picktime');
-      $pickzip =DB::table('prodcuts')->where('id', '=', $pid)->value('pickzip');
-      $pickplace =DB::table('prodcuts')->where('id', '=', $pid)->value('pickplace');
-      $quantity=DB::table('prodcuts')->where('id', '=', $pid)->value('quantity');
-      $dscrp =DB::table('prodcuts')->where('id', '=', $pid)->value('description');
-      $filename =DB::table('prodcuts')->where('id', '=', $pid)->value('filename');
-      $postime =DB::table('prodcuts')->where('id', '=', $pid)->value('created_at');
-      $userid =DB::table('prodcuts')->where('id', '=', $pid)->value('userid');
-      $pstatus =DB::table('prodcuts')->where('id', '=', $pid)->value('pstatus');
+      $products =DB::table('products')->where('pid', '=', $pid)->get();
+      $pname =DB::table('products')->where('pid', '=', $pid)->value('pname');
+      $picktime =DB::table('products')->where('pid', '=', $pid)->value('picktime');
+      $pickzip =DB::table('products')->where('pid', '=', $pid)->value('pickzip');
+      $pickplace =DB::table('products')->where('pid', '=', $pid)->value('pickplace');
+      $quantity=DB::table('products')->where('pid', '=', $pid)->value('quantity');
+      $dscrp =DB::table('products')->where('pid', '=', $pid)->value('description');
+      $filename =DB::table('products')->where('pid', '=', $pid)->value('filename');
+      $postime =DB::table('products')->where('pid', '=', $pid)->value('created_at');
+      $userid =DB::table('products')->where('pid', '=', $pid)->value('userid');
+      $pstatus =DB::table('products')->where('pid', '=', $pid)->value('pstatus');
       $username =DB::table('users')->where('id','=',$userid)->value('name');
-        //Prodcuts::pid ->where('id', '=', $uid)
+        //products::pid ->where('pid', '=', $uid)
         //DB::table('requests')->get( $pid);-->你po的有的有那些request
         //你所有的request
         //request->uid對到的pid->詳細資料
@@ -78,7 +78,7 @@ class RequestController extends Controller
                       
         
         
-      return view('pages.item', compact('uid','pid','prodcuts','username','pname','picktime',
+      return view('pages.item', compact('uid','pid','products','username','pname','picktime',
                                               'pickzip','pickplace','quantity','dscrp',
                                               'filename','userid','randpds','postime','rts','ruid',
                                               'r_us','r_unames','pstatus'));

@@ -12,10 +12,11 @@ my title
             </div>
         </div>
         <div class="card" style="float: right;height:'300px' ;width:55% ;margin: 0px 1% 2% 1%;">
-        <div class="card-body"style="height:30% ;width:55%">
+        <div class="card-body"style="height:30% ;width:80%">
             <h3>{{$pname}}</h3>
+            <P style="text-align:right;">{{$pstatus}}</P>
             <ul>
-                <li>Pick Up Time: {{$picktime}}</li>
+                <li>Pick Up By: {{$picktime}}</li>
                 <li>Pick Up Location: {{$pickzip}} - {{$pickplace}}</li>
                 <li>Amount: {{$quantity}}</li>
                 <li>Posted by: {{$username}}</li>
@@ -27,15 +28,14 @@ my title
                 </p>
                 <br>
                 <br>
+                <center>
+                <button name="edit"><a href="/mylist/{{$userid}}_{{$pid}}/edit" style="color: inherit;">EDIT</a></button>
+                <button name="backsave"><a href="{{url('savefood')}}" style="color: inherit;">BACK</a></button>
+                </center>
         </div>
         </div>
     </div>
-    <div>
-    <center>
-    <button name="edit"><a href="/mylist/{{$userid}}_{{$pid}}/edit">back</a></button>
-    <button name="backsave"><a href="{{url('savefood')}}">back</a></button>
-    </center>
-    </div>
+   
     
     <!-- <button name="editshare" style="align-self: right;"><a href="/edit/{id}">EDIT!!!</a></button>
     <input type="submit" name="submitFood" value="SHARE!!!">

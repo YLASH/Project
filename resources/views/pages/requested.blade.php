@@ -1,6 +1,6 @@
     <script>
         window.onload = function askreq() {
-                                            alert("Successful Request!"); 
+                                            alert("Request Sent!"); 
                                             window.location.href ="/mylist";
                                            }
     </script>

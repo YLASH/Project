@@ -27,18 +27,18 @@ class NewController extends Controller
             $user = Auth::user();
             $username = $user->name;
         }
-        $prodcuts =DB::table('prodcuts')->orderby('created_at','desc')->get();
-        $pid =DB::table('prodcuts')->value('id');
-        $pname =DB::table('prodcuts')->value('pname');
-        $picktime =DB::table('prodcuts')->value('picktime');
-        $pickzip =DB::table('prodcuts')->value('pickzip');
-        $pickplace =DB::table('prodcuts')->value('pickplace');
-        $filename =DB::table('prodcuts')->value('filename');
-        $postime =DB::table('prodcuts')->value('created_at');
-        $pstatus =DB::table('prodcuts')->value('pstatus');
+        $products =DB::table('products')->orderby('created_at','desc')->get();
+        $pid =DB::table('products')->value('pid');
+        $pname =DB::table('products')->value('pname');
+        $picktime =DB::table('products')->value('picktime');
+        $pickzip =DB::table('products')->value('pickzip');
+        $pickplace =DB::table('products')->value('pickplace');
+        $filename =DB::table('products')->value('filename');
+        $postime =DB::table('products')->value('created_at');
+        $pstatus =DB::table('products')->value('pstatus');
        
         //$images = UploadedImage::all();
-        return view('pages.savefood', compact('prodcuts','pid','username','pname','picktime',
+        return view('pages.savefood', compact('products','pid','username','pname','picktime',
                                                'pickzip','pickplace','postime','pstatus'));
         
     }
@@ -51,7 +51,7 @@ class NewController extends Controller
         return view('pages.share', compact('username'));
         }
         // return header('Location: auth.login?redirect=pages.share');
-        return view('auth.login', compact('username'));
+        return view('auth.register', compact('username'));
         // ? $this->redirectTo : '/share';
     }
     public function aboutus() {

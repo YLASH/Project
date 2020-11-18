@@ -13,7 +13,7 @@ Join us !be Volunteer!!
     <li>Register as a SAVEFOOD member for free.</li>
     <li>Go to the cooperative stores to get the product near expiration time</li>
     <li>Volunteers have the priority to keep the food they need.</li>    
-    <li>Take picture for the prodcut and upload related information.</li>
+    <li>Take picture for the product and upload related information.</li>
     <li>Provide pick-up position for requesters.</li>    
     <li>Reply the request from requesters in time.</li>
     <li>Wait for requesters to get their products.</li>

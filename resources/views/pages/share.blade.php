@@ -15,8 +15,8 @@ my title
         @csrf
         <label for="pdname">What is it you're sharing today?</label>
         <input type="text"  id="pdname" name="pdname" placeholder="Insert Product Name" required><br>
-        <label for="coltime">Collection By</label>
-        <input type="datetime-local" id="coltime" name="colBy" required>
+        <label for="colBy">Collection By</label>
+        <input type="date" id="colBy" name="coldate" required> <input type="time" id="colBy" name="coltime">
         <!-- <select id=collectinfo name="date" required> -->
         <?php 
         // for($i=1; $i<=31; $i++)

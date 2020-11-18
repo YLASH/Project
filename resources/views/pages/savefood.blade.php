@@ -19,18 +19,18 @@ my title
 </div>
      <!--for 產品列表-->
      
-     @forelse ($prodcuts as $prodcut)
-        @if($prodcut->pstatus == 'show')
+     @forelse ($products as $product)
+        @if($product->pstatus == 'showing')
         <div class="card" style="width:30%; float:left;margin: 0px 1% 2% 1%; padding-bottom:0;">
-        <a class="btn btn-sm" href="/product/{{$prodcut->id}}"><img class="card-img-top"src="/storage/{{$prodcut->filename}}" alt="Card image" height="250px" style="width:100%"></a>
-            <p align="right"style="margin:0;">Posted-time: {{$prodcut->created_at}}</p>
+        <a class="btn btn-sm" href="/product/{{$product->pid}}"><img class="card-img-top"src="/storage/{{$product->filename}}" alt="Card image" height="250px" style="width:100%"></a>
+            <p align="right"style="margin:0;">Posted-time: {{$product->created_at}}</p>
             <div class="card-body"  style="padding-top:0;">
-            <h5 class="card-title" >{{$prodcut->pname}}</h5>
+            <h5 class="card-title" >{{$product->pname}}</h5>
             <div style="width:75%; float:left;margin-top: 0;">
-            <p  class="card-text">Pick up by: {{$prodcut->picktime}} <br>Collect at: {{$prodcut->pickzip}}-{{$prodcut->pickplace}}</p>
+            <p  class="card-text">Pick up by: {{$product->picktime}} <br>Collect at: {{$product->pickzip}}-{{$product->pickplace}}</p>
             </div>
             <div style="width:20%; float:right;">
-            <a class="btn btn-sm" href="/product/{{$prodcut->id}}" role="button" style="float: right"> >>more</a>
+            <a class="btn btn-sm" href="/product/{{$product->pid}}" role="button" style="float: right"> >>more</a>
             </div> 
             </div>
         </div>

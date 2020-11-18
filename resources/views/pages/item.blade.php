@@ -5,6 +5,13 @@ my title
 @endsection
 
 @section('content')
+<style>
+     a {color: inherit;
+
+     }
+     
+</style>
+
 <div class="container" >
         <div class="card" style="float: left; height:30%; width:38%;margin: 0px 1% 2% 1%;"> 
         <div class="card-body">
@@ -12,7 +19,7 @@ my title
             <img src="/storage/{{$filename}}" art="picture" height="295px" width="80%" >
             </div>
         </div>
-        @if($pstatus=='hide')
+        @if($pstatus=='hidden')
         <div class="card" style="float:left;height:30% ;width:40% ;margin: 0px 0.5% 2% 1%;background-color:#F2F2F2">
         @else
         <div class="card" style="float:left;height:30% ;width:40% ;margin: 0px 0.5% 2% 1%;">
@@ -60,7 +67,7 @@ my title
     <div class="container" style="margin-top:2%">  
    <br>
   <div style="float: left;">
-   <h5>Who sent the request...</h5>
+   <h5>You have received a request from...</h5>
    <hr>
    
    <br>

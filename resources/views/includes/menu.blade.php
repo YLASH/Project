@@ -1,6 +1,20 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fondamento:ital@1&family=Shadows+Into+Light&display=swap');
+</style>
+<style>
+  nav { font-family: 'Shadows Into Light', cursive; 
+        font-size: 17.89px;
+        font-weight: 670;
+        background-color: radial-gradient(#FFFFFF,#ffd6d6);
+    }
+  nav > div {
+    font-weight: inherit;
+  }
+ 
+</style>
 
-<nav class="navbar navbar-expand-lg navbar-light "   style="background-color:'＃FFF8D7	'	;">
-  <img src='\images\logo.png' width="50">
+<nav class="navbar navbar-expand-lg navbar-light ">
+<a class="link" href="{{ url('/') }}"><img src='\images\logo.png'  width="50"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -15,8 +29,8 @@
           How can I Help?
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{ url('share') }}">Share</a>
-          <a class="dropdown-item" href="{{ url('savefood') }}">Save Food</a>
+          <a class="dropdown-item" href="{{ url('share') }}">Share your love❤️</a>
+          <a class="dropdown-item" href="{{ url('savefood') }}">Let's take them home!</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="{{ url('volunteers') }}">Volunteers</a>
         </div>
@@ -44,10 +58,10 @@
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2" >
                   
                   <a class="dropdown-item"  href="{{ route('profile.show') }}">Profile</a>
-                  <a class="dropdown-item"  href="#">Notification</a>
+                  <!--<a class="dropdown-item"  href="#">Notification</a>-->
                   <a class="dropdown-item"  href="{{ url('/mylist/') }}">Mylist</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item"  href="{{ url('/logout') }}">logout</a>
+                 <!-- <a class="dropdown-item"  href="{{ url('/logout') }}">logout</a>-->
                 </div>
               </div>
             </td>

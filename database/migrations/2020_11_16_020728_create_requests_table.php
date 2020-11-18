@@ -14,11 +14,11 @@ class CreateRequestsTable extends Migration
     public function up()
     {
         Schema::create('requests', function (Blueprint $table) {
-            $table->id('rid');
-            $table->string('pid');
-            $table->string('amount');
-            $table->string('uid');
-            $table->string('status');
+            $table->id("rid");
+            $table->string("pid");
+            $table->string("amount");
+            $table->string("uid");
+            $table->string("status");
             $table->timestamps();
         });
     }

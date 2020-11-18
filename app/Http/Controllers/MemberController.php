@@ -12,15 +12,16 @@ class MemberController extends Controller
         if (Auth::check()) {
             $user = Auth::user();
             $username = $user->name;
-            $userid =$user->id;
-        $prodcuts =DB::table('prodcuts')->where('userid', '=', $userid)->orderby('created_at','desc')->get(); 
+            $uid =$user->id;
+        $products =DB::table('products')->where('userid', '=', $uid)->orderby('created_at','desc')->get(); 
         //$r_p =DB::table('requests')->where('uid', '=', $userid)->get();
-        $status=DB::table('requests')->where('uid', '=', $userid)->value('status');
-        $r_ps=DB::table('requests')->join('prodcuts','requests.pid','=','prodcuts.id')
-                                   ->where('requests.uid','=',$userid)
-                                   ->select('requests.*', 'prodcuts.*')
+        $status=DB::table('requests')->where('uid', '=', $uid)->value('status');
+        $r_ps=DB::table('requests')->join('products','requests.pid','=','products.pid')
+                                   ->where('requests.uid','=',$uid)
+                                   ->orderby('created_at','desc')
+                                   ->select('requests.*', 'products.*')
                                    ->get();
-        return view('pages.mylist', compact('username','prodcuts','userid','status','r_ps'));
+        return view('pages.mylist', compact('username','products','uid','status','r_ps'));
         }
         
         return view('auth.login', compact('username'));
